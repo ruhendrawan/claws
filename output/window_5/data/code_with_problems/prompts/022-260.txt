@@ -1,0 +1,28 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Python,Importing,
+HandlingObjectOrientedProgramming,DefiningClass,
+HandlingObjectOrientedProgramming,DefiningOOPMethod,
+HandlingObjectOrientedProgramming,CallingOOPMethod,
+HandlingObjectOrientedProgramming,CreatingObject,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_string_join
+#problem description: Construct a program that prints out a sentence from a given list of words.
+words = ["this", "is", "a", "sentence"]
+sentence = " ".join(words)
+print(sentence.capitalize() + ".")
+```

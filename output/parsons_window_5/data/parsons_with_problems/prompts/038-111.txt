@@ -1,0 +1,32 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingAdvancedDataStructure,StackTask,
+TwoDimensionalArrayTask,ReplacingElement2DArray,
+TwoDimensionalArrayTask,Create2DArray,
+TwoDimensionalArrayTask,Indexing2DArray,
+HandlingFunction,CallingFunctionLibrary,"CallingFunctionLibrary refers to ANY use of built-in Python functions (print, len, replace, etc.) and built-in methods of objects (like list.append() or string.replace(), etc.)."
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_pandas_groupby_2
+#problem description: You're provided a dataframe of used cars using pandas. Group the data by 'type' and count the number of cars available for each type.
+import pandas as pd
+
+df = pd.read_csv("used_cars.csv")
+
+grouped_by_type = df.groupby("type")["name"].count()
+
+print(grouped_by_type)
+```

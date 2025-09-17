@@ -1,0 +1,31 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ArithmeticOperation,Substraction,
+ArithmeticOperation,FindMaximum,
+ArithmeticOperation,Division,
+CheckingCondition,IfElifElseChecking,IfElifElseChecking refers to an if-elif-else statement which is not placed inside any loop
+CheckingCondition,AssertChecking,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_concat_str_num2
+#problem description: Construct a program that uses variables x, y, and z to print "x * 2 = 4".
+#Step 1: Assign initial values to the variables x, y, and z
+x = 2
+y = "x * 2 = "
+z = x * 2
+#Step 2: Print the text using the variables initialized above
+print(y + str(z))
+```

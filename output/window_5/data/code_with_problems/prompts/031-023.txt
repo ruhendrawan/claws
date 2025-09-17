@@ -1,0 +1,51 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingList,CreatingList,
+HandlingList,IndexingList,
+HandlingList,DeletingListElement,
+AddingListElement,AddingListElementWithInsert,
+AddingListElement,AddingListElementWithAppend,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_score_dict2
+#problem description : Assume we have a list of students and a list of their corresponding test scores. Construct a program that has two functions: - a function that receives these two lists and returns a dictionary that maps each student to the scores of that student, and  - a function that receives the dictionary created by the above function and calculates the average score of each student
+#Step 1: Define the function that creates the dictionary
+def create_dictionary(std_lst, test_lst):
+    #Step 1.1: Create an empty dictionary
+    res_dict={}
+    #Step 1.2: Update the dictionary entries as we iterate through the indexes in the given lists
+    for i in range(len(std_lst)):
+        if std_lst[i]  in res_dict:
+            res_dict[ std_lst[i] ].append( test_lst[i] )
+        else:
+            res_dict[ std_lst[i] ] = [ test_lst[i] ]
+    return res_dict
+#Step 2: Define the function that calculates the average of each student's scores
+def average(new_dict):
+    #Step 2.1: Iterate through the students in the dictionary
+    for std_name in new_dict :
+        #Step 2.1.1: Iterate through the list of student's scores, add each score to the running total
+        total = 0;
+        for score in new_dict[std_name]:
+            total+= score
+        #Step 2.1.2: Calculate and print the average of student's scores
+        average = total/len(new_dict[std_name])
+        print(std_name, average)
+#Step 3: Call the functions
+names = ['Joe', 'Tom', 'Barbara', 'Sue', 'Sally', 'Joe', 'Sue']
+scores=[10, 23, 13, 18, 12, 9, 15]
+average( create_dictionary(names, scores) )
+```

@@ -1,0 +1,35 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Literal,StringLiteral,
+Literal,BooleanLiteral,
+NumericLiteral,IntegerLiteral,
+NumericLiteral,FloatLiteral,
+LiteralCollection,SetLiteral,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_nested_ifs
+#problem description: Construct a program that prints out a sentence depending on the time of day. Night is considered to be before 7 a.m., morning is from 7 a.m. until noon, afternoon is until 5 p.m. and rest is considered evening.
+if am_or_pm == "am":
+	if hour < 7:
+		print("It is still night")
+	else:
+		print("It is morning")
+elif am_or_pm == "pm":
+	if hour <= 5:
+		print("It is afternoon")
+	else:
+		print("It is evening")
+```

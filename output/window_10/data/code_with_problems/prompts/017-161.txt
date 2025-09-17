@@ -1,0 +1,40 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingList,CreatingList,
+HandlingList,ReversingList,
+HandlingList,SlicingList,
+HandlingList,ListReferencing,"ListReferencing refers to the code in which one list is set equal to another, and a change to one of the lists causes the same change in the other list. ListReferencing should only be marked as present if a list is explicitly assigned to another list variable (e.g., list2 = list1)."
+AddingListElement,AddingListElementWithAppend,
+AddingListElement,AddingListElementWithInsert,
+HandlingDictionary,AddingItemToDictionary,Referes to the expression dictionary[‘new_key' ]= value
+HandlingDictionary,ReplacingDictionaryElement,refers to using the expression dictionary[old_key]= value
+HandlingDictionary,AccessingDictionary,"AccessingDictionary includes any operation that retrieves values from a dictionary, including direct indexing (dict[key]) and methods like .get(), .items(), .keys(), and .values().)"
+HandlingDictionary,IndexingDictionary,Refers to direct indexig with the expression dict[key]
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_adjacent_consecutive
+#problem description: Construct a program that checks whether a sequence of integers, entered one at a time, contains adjacent integers that are consecutive. The user enters -1 to indicate the end of the input. Note that integers which follow each other in order, without gaps, from smallest to largest are consecutive numbers. For example, 12, 13, 14 and 15 are consecutive numbers.
+#Step 1: Read the first integer that the user enters
+text = input("Enter an integer: ")
+num = int(text)
+#Step 2: Read the rest of the integers that the user enters and check for adjacent consecutive numbers
+while num != -1 :
+    previous = num
+    text = input("Enter an integer: ")
+    num = int(text)
+    if num != -1 and num - previous == 1 :
+        print(previous, "and", num, "are consecutive.")
+```

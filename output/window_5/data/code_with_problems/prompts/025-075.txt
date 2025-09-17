@@ -1,0 +1,38 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedWhileLoopIteration). Do not also include the single-loop categories for the outer loop"
+NonNestedIteration,SingleForLoopIteration,"SingleForLoopIteration refers to a single use use of a for-loop that has no nested structure
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedForLoopIteration). Do not also include the single-loop categories for the outer loop"
+WhileLoopWithUpdate,WhileLoopWith+=,WhileLoopWith+= refers to when there is an update of a variable with the addition sign inside a while loop
+WhileLoopWithUpdate,WhileLoopWith*=,WhileLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a while loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_pythagorean_theorem
+#problem description: Construct a program that accepts two input values from the user, one for each side of a right-angle triangle. The program uses the Pythagorean theorem (c^2 = a^2 + b^2) to calculate the length of the triangle's hypotenuse.
+#Step 1: Receive the values for each side of a right-angle triangle
+text = input("Enter the length of side A:")
+side_A = float(text)
+text = input("Enter the length of side B:")
+side_B = float(text)
+#Step 2: Calculate square of side A
+squareside_A = side_A ** 2
+#Step 3: Calculate square of side B
+squareside_B = side_B ** 2
+#Step 4: Use Pythagorean theorem to calculate the length of the triangle's hypotenuse
+hypotenuse = ( squareside_A + squareside_B ) ** 0.5
+#Step 5: Print the result
+print("Given that side A is", side_A, "and side B is", side_B, ", the hypotenuse is", hypotenuse)
+```

@@ -1,0 +1,290 @@
+{
+  "EducationalPython": [
+    "Concatenation",
+    "Importing",
+    "CheckingCondition",
+    "FindingLength",
+    "Printing",
+    "ManagingVariable",
+    "HandlingAdvancedDataStructure",
+    "HandlingObjectOrientedProgramming",
+    "HandlingFunction",
+    "Iteration",
+    "ArithmeticOperation",
+    "CheckingForItem",
+    "DataTypeSpecificTask",
+    "HandlingInput",
+    "HandlingError"
+  ],
+  "Concatenation": [],
+  "Importing": [],
+  "CheckingCondition": [
+    "CheckingInForLoop",
+    "IfElseChecking",
+    "AssertChecking",
+    "IfElifElseChecking",
+    "NestedIfChecking",
+    "IfChecking",
+    "CheckingInWhileLoop",
+    "IfElifChecking",
+    "BooleanEvaluating"
+  ],
+  "CheckingInForLoop": [
+    "IfElseCheckingInForLoop",
+    "IfElifCheckingInForLoop",
+    "IfCheckingInForLoop",
+    "IfElifElseCheckingInForLoop"
+  ],
+  "IfElseCheckingInForLoop": [],
+  "IfElifCheckingInForLoop": [],
+  "IfCheckingInForLoop": [],
+  "IfElifElseCheckingInForLoop": [],
+  "IfElseChecking": [],
+  "AssertChecking": [],
+  "IfElifElseChecking": [],
+  "NestedIfChecking": [],
+  "IfChecking": [],
+  "CheckingInWhileLoop": [
+    "IfElifElseCheckingInWhileLoop",
+    "IfCheckingInWhileLoop",
+    "IfElseCheckingInWhileLoop",
+    "IfElifCheckingInWhileLoop"
+  ],
+  "IfElifElseCheckingInWhileLoop": [],
+  "IfCheckingInWhileLoop": [],
+  "IfElseCheckingInWhileLoop": [],
+  "IfElifCheckingInWhileLoop": [],
+  "IfElifChecking": [],
+  "BooleanEvaluating": [],
+  "FindingLength": [],
+  "Printing": [],
+  "ManagingVariable": [
+    "SwappingVariablesValue",
+    "AssigningVariable",
+    "UpdatingVariable"
+  ],
+  "SwappingVariablesValue": [],
+  "AssigningVariable": [],
+  "UpdatingVariable": [],
+  "HandlingAdvancedDataStructure": [
+    "BinaryTreeTask",
+    "LinkedListTask",
+    "QueueTask",
+    "StackTask",
+    "TwoDimensionalArrayTask"
+  ],
+  "BinaryTreeTask": [],
+  "LinkedListTask": [],
+  "QueueTask": [],
+  "StackTask": [],
+  "TwoDimensionalArrayTask": [
+    "ReplacingElement2DArray",
+    "Indexing2DArray",
+    "Create2DArray"
+  ],
+  "ReplacingElement2DArray": [],
+  "Indexing2DArray": [],
+  "Create2DArray": [],
+  "HandlingObjectOrientedProgramming": [
+    "CallingOOPMethod",
+    "CreatingObject",
+    "DefiningClass",
+    "DefiningOOPMethod"
+  ],
+  "CallingOOPMethod": [],
+  "CreatingObject": [],
+  "DefiningClass": [],
+  "DefiningOOPMethod": [],
+  "HandlingFunction": [
+    "HandlingFunctionCallingFunction",
+    "HandlingRecursiveFunction",
+    "CallingFunctionLibrary",
+    "HandlingNestedFunction",
+    "HandlingStandardFunction",
+    "NestedFunctionCall"
+  ],
+  "HandlingFunctionCallingFunction": [
+    "CallingFunctionCallingFunction",
+    "DefiningFunctionCallingFunction"
+  ],
+  "CallingFunctionCallingFunction": [],
+  "DefiningFunctionCallingFunction": [],
+  "HandlingRecursiveFunction": [
+    "CallingRecursiveFunction",
+    "DefiningRecursiveFunction"
+  ],
+  "CallingRecursiveFunction": [],
+  "DefiningRecursiveFunction": [],
+  "CallingFunctionLibrary": [],
+  "HandlingNestedFunction": [
+    "CallingNestedFunction",
+    "DefiningNestedFunction"
+  ],
+  "CallingNestedFunction": [],
+  "DefiningNestedFunction": [],
+  "HandlingStandardFunction": [
+    "CallingStandardFunction",
+    "DefiningStandardFunction"
+  ],
+  "CallingStandardFunction": [],
+  "DefiningStandardFunction": [],
+  "NestedFunctionCall": [],
+  "Iteration": [
+    "WhileLoopWithUpdate",
+    "SingleForLoopIteration",
+    "SingleWhileLoopIteration",
+    "ForLoopWithUpdate",
+    "NestedLoopIteration"
+  ],
+  "WhileLoopWithUpdate": [
+    "WhileLoopWithListIndexing",
+    "WhileLoopWith*=",
+    "WhileLoopWith+="
+  ],
+  "WhileLoopWithListIndexing": [],
+  "WhileLoopWith*=": [],
+  "WhileLoopWith+=": [],
+  "SingleForLoopIteration": [],
+  "SingleWhileLoopIteration": [],
+  "ForLoopWithUpdate": [
+    "ForLoopWith+=",
+    "ForLoopWith*=",
+    "ForLoopWithListIndexing"
+  ],
+  "ForLoopWith+=": [],
+  "ForLoopWith*=": [],
+  "ForLoopWithListIndexing": [],
+  "NestedLoopIteration": [
+    "MixedNestedLoopIteration",
+    "NestedForLoopIteration",
+    "NestedWhileLoopIteration"
+  ],
+  "MixedNestedLoopIteration": [],
+  "NestedForLoopIteration": [],
+  "NestedWhileLoopIteration": [],
+  "ArithmeticOperation": [
+    "FindAbsolute",
+    "FindRemainder",
+    "FindMaximum",
+    "Addition",
+    "Round",
+    "Power",
+    "FindMinimum",
+    "Substraction",
+    "Division",
+    "Multiplication"
+  ],
+  "FindAbsolute": [],
+  "FindRemainder": [],
+  "FindMaximum": [],
+  "Addition": [],
+  "Round": [],
+  "Power": [],
+  "FindMinimum": [],
+  "Substraction": [],
+  "Division": [],
+  "Multiplication": [],
+  "CheckingForItem": [],
+  "DataTypeSpecificTask": [
+    "HandlingInteger",
+    "HandlingTuple",
+    "HandlingFloat",
+    "HandlingDictionary",
+    "HandlingList",
+    "HandlingFile",
+    "HandlingString"
+  ],
+  "HandlingInteger": [
+    "TransformingToIntType"
+  ],
+  "TransformingToIntType": [],
+  "HandlingTuple": [
+    "CreatingTuple",
+    "SlicingTuple",
+    "IndexingTuple"
+  ],
+  "CreatingTuple": [],
+  "SlicingTuple": [],
+  "IndexingTuple": [],
+  "HandlingFloat": [
+    "TransformingToFloatType"
+  ],
+  "TransformingToFloatType": [],
+  "HandlingDictionary": [
+    "ReplacingDictionaryElement",
+    "IndexingDictionary",
+    "AddingItemToDictionary",
+    "AccessingDictionary",
+    "CreatingDictionary"
+  ],
+  "ReplacingDictionaryElement": [],
+  "IndexingDictionary": [],
+  "AddingItemToDictionary": [],
+  "AccessingDictionary": [],
+  "CreatingDictionary": [],
+  "HandlingList": [
+    "DeletingListElement",
+    "IndexingList",
+    "CreatingList",
+    "SlicingList",
+    "ReplacingListElement",
+    "ListReferencing",
+    "AddingListElement",
+    "ReversingList"
+  ],
+  "DeletingListElement": [],
+  "IndexingList": [],
+  "CreatingList": [],
+  "SlicingList": [],
+  "ReplacingListElement": [],
+  "ListReferencing": [],
+  "AddingListElement": [
+    "AddingListElementWithInsert",
+    "AddingListElementWithAppend"
+  ],
+  "AddingListElementWithInsert": [],
+  "AddingListElementWithAppend": [],
+  "ReversingList": [],
+  "HandlingFile": [
+    "ClosingFile",
+    "ReadingLine",
+    "OpeningFile"
+  ],
+  "ClosingFile": [],
+  "ReadingLine": [],
+  "OpeningFile": [],
+  "HandlingString": [
+    "CreatingString",
+    "ModifyingStringCase",
+    "ReplacingStringContent",
+    "FormattingString",
+    "TransformingToStringType",
+    "SplittingString",
+    "TrimmingString",
+    "IndexingString",
+    "SlicingString"
+  ],
+  "CreatingString": [],
+  "ModifyingStringCase": [
+    "ConvertStringToUpperCase",
+    "ConvertStringToLowerCase",
+    "CapitalizeString"
+  ],
+  "ConvertStringToUpperCase": [],
+  "ConvertStringToLowerCase": [],
+  "CapitalizeString": [],
+  "ReplacingStringContent": [],
+  "FormattingString": [],
+  "TransformingToStringType": [],
+  "SplittingString": [],
+  "TrimmingString": [],
+  "IndexingString": [],
+  "SlicingString": [],
+  "HandlingInput": [],
+  "HandlingError": [
+    "HandlingSpecificError",
+    "HandlingGeneralError"
+  ],
+  "HandlingSpecificError": [],
+  "HandlingGeneralError": []
+}

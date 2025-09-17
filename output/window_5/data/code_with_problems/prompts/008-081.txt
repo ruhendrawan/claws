@@ -1,0 +1,45 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ArtithmeticOperator,*,
+ArtithmeticOperator,+,
+ArtithmeticOperator,-,
+ComparisonOperator,LessOrEqual,<=
+ComparisonOperator,==,==
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_nested_if_min_max
+#problem decsription: Construct a program that determines the smallest of the three integer values entered by the user.
+#Step 1: Read the three integers
+text = input("Enter the first integer: ")
+num1 = int(text)
+text = input("Enter the second integer: ")
+num2 = int(text)
+text = input("Enter the third integer: ")
+num3 = int(text)
+#Step 2: Determine the minimum integer
+if num1 < num2 :
+    if num1 < num3 :
+        min_num = num1
+    else :
+        min_num = num3
+else :
+    if num2 < num3 :
+        min_num = num2
+    else :
+        min_num = num3
+#Step 3: Print the minimum integer
+print("Minimum value:", min_num)
+```

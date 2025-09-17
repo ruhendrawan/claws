@@ -1,0 +1,43 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+int()"
+ManagingVariable,UpdatingVariable,UpdatingVariable refers to when a variable that was already assigned to a value is update (e.g. x+=1 or x=x+1)
+ManagingVariable,SwappingVariablesValue,"Refers to when variables are swapped (e.g.
+temp =a
+a=b
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ae
+#exercise name: ae_adl_objects3
+class Account:
+  def __init__(self):
+    self.balance = 0
+  def deposit(self, sum):
+    self.balance += sum
+  def withdraw(self, sum):
+    self.balance -= sum
+  def get_balance(self):
+    return self.balance
+def main():
+  accounts = {}
+  accounts[259] = Account()
+  accounts[632] = Account()
+  accounts[259].deposit(500)
+  accounts[632].deposit(800)
+  accounts[259].withdraw(25)
+  print(accounts[259].get_balance())
+  print(accounts[632].get_balance())
+main()
+```

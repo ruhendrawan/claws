@@ -1,0 +1,32 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingList,SlicingList,
+HandlingList,IndexingList,
+AddingListElement,AddingListElementWithInsert,
+AddingListElement,AddingListElementWithAppend,
+ArithmeticOperation,Addition,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_find_and_square3
+#problem description: Construct a function which finds even numbers from the list given as a parameter, calculates the square of each such number and adds the squares to a new list. The function should return the new list.
+def find_and_square(lst):
+    new_list = []
+    for i in range(len(lst)):
+        num = lst[i]
+        if num % 2 == 0:
+            new_list.append(num * num)
+    return new_list
+```

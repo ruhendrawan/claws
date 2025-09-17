@@ -1,0 +1,34 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingString,IndexingString,
+HandlingString,FormattingString,f string
+HandlingString,ReplacingStringContent,
+HandlingString,TransformingToStringType,
+HandlingString,CreatingString,str()
+HandlingString,TrimmingString,strip() or rstrip()
+ModifyingStringCase,ConvertStringToUpperCase,
+ModifyingStringCase,CapitalizeString,
+ModifyingStringCase,ConvertStringToLowerCase,
+HandlingFunction,CallingFunctionLibrary,"CallingFunctionLibrary refers to ANY use of built-in Python functions (print, len, replace, etc.) and built-in methods of objects (like list.append() or string.replace(), etc.)."
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_range1_2
+#problem description: Construct a program that prints a sequence of numbers from 0 (inclusive) to 6 (exclusive).
+#Step 1: Iterate through the numbers in the sequence
+for num in range(6):
+    #Step 1.1: Print each number in the sequence
+    print(num)
+```

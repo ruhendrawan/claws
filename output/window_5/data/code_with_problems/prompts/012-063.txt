@@ -1,0 +1,43 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+BuiltInFunction,next(),
+BuiltInFunction,str(),
+BuiltInFunction,len(),
+BuiltInFunction,max(),
+BuiltInFunction,tuple(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ae
+#exercise name: ae_adl_dict1
+def add_numbers(phonebook):
+  phonebook["George"] = "555-4523"
+  phonebook["Mike"] = "555-7412"
+  phonebook["Lisa"] = "555-6398"
+def main():
+  numbers = {}
+  add_numbers(numbers)
+  count = len(numbers)
+  print("Number count:", count)
+  if "Mike" in numbers:
+    print(numbers["Mike"])
+  else:
+    print("There is no number for Mike.")
+  numbers["Mike"] = "555-6852"
+  mike = numbers["Mike"]
+  if "Marissa" in numbers:
+    print(numbers["Marissa"])
+  else:
+    print("There is no number for Marissa.")
+```

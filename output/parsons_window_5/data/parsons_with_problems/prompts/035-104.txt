@@ -1,0 +1,33 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedForLoopIteration). Do not also include the single-loop categories for the outer loop"
+NonNestedIteration,SingleWhileLoopIteration,"SingleWhileLoopIteration refers to a single use of a while-loop that has no nested structure
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedWhileLoopIteration). Do not also include the single-loop categories for the outer loop"
+ForLoopWithUpdate,ForLoopWithListIndexing,ForLoopWithListIndexing refers to when there is an indexing of a list happening inside a for  loop
+ForLoopWithUpdate,ForLoopWith+=,ForLoopWith+= refers to when there is an update of a variable with the addition sign inside a for loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_json_agg_5
+#problem description: You're provided a list of aircrafts and helicopter, with manufacturer information, date of manufacture and other information. Find the minimum age of all flights used in military.
+min_age = None
+
+for aircraft in aircrafts:
+    if aircraft["used_in"] == "Military":
+        if min_age is None or aircraft["age"] < min_age:
+            min_age = aircraft["age"]
+
+print(f"The age of youngest military aircraft is {min_age}")
+```

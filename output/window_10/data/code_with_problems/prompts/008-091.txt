@@ -1,0 +1,39 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+LiteralCollection,ListLiteral,
+LiteralCollection,DictLiteral,
+LiteralCollection,TupleLiteral,
+LiteralCollection,SetLiteral,
+ArithmeticExpression,BinaryOperation,
+ArithmeticExpression,UnaryOperation,
+LogicalExpression,ComparisonExpression,
+LogicalExpression,BooleanExpression,
+SubscriptExpression,IndexingExpression,
+SubscriptExpression,SlicingExpression,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: q_py
+#exercise name: q_py_topic_exceptions:q_py_list_except1
+the_list = (1, 2, 3, 4, 5)
+sum = 0
+error = 0
+for i in range(10):
+      try:
+          sum += the_list[i]
+      except:
+          error += 1
+print(sum)
+print(error)
+```

@@ -1,0 +1,35 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+StringMethod,capitalize(),
+StringMethod,lower(),
+StringMethod,replace(),
+StringMethod,join(),
+ClassMethod,__init()__,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_json_agg_2
+#problem description: You're provided a list of laptops in JSON list format. Find the best laptop by minimizing the price and maximizing the battery life.
+best_laptop = laptops[0]
+min_price, max_battery = best_laptop["price"], best_laptop["battery_life"]
+
+for laptop in laptops[1:]:
+    price, battery = laptop["price"], laptop["battery_life"]
+    if price < min_price or (price == min_price and battery > max_battery):
+        min_price, max_battery, best_laptop = price, battery, laptop
+
+print("The best laptop to buy is:")
+print("Name:", best_laptop["name"])
+```

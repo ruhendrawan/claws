@@ -1,0 +1,64 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Error,IOError,
+Error,ValueError,
+Operator,=,=
+LogicalOperator,not,
+LogicalOperator,or,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_print_medals_row_column_total
+#problem description: Assume that we have a 7x4 matrix that stores the number of medals that seven countries won in the skating competitions at the Winter Olympic. This matrix looks like as follows:[[ "Canada", 1, 0, 1 ],[ "China", 1, 1, 0 ],...] Each row of this matrix corresponds to the medal counts for the country in that row. The second, third, and fourth numbers within a row represent the number of Gold, Silver, and Bronze medals won by the corresponding country in that row. Construct a program that takes this matrix and prints a table of medal counts with row and column totals. The column totals are the sum of the gold, silver, and bronze medals won in the competition. The output table should look like as follows:
+#      Country    Gold  Silver  Bronze   Total
+#         Canada        1       0       1          2
+#            China        1       1       0          2
+#           ...
+#Column Total      4       4       4
+#Step 1: Define a 7x4 matrix that stores the number of medals won by seven countries
+medal_counts = [[ "CAN", 1, 0, 1 ],
+                [ "CHN", 1, 1, 0 ],
+                [ "GER", 0, 0, 1 ],
+                [ "KOR", 1, 0, 0 ],
+                [ "JPN", 0, 1, 1 ],
+                [ "RUS", 0, 1, 1 ],
+                [ "USA", 1, 1, 0 ]]
+#Step 2: Create a list to store column totals
+column_totals = [0] * ( len(medal_counts[0]) - 1 )
+#Step 3: Print the header of the output table
+print("{:>4s}{:>3s}{:>3s}{:>3s}{:>4s}".format("Name","G","S","B","All"))
+#Step 4: Iterate through the rows in the medal counts matrix
+for i in range(len(medal_counts)):
+    #Step 4.1: Assign initial values to variables we need for printing row i
+    line = "{:>4s}".format(medal_counts[i][0])
+    row_total = 0
+    #Step 4.2: Iterate through the columns that have medal counts
+    for j in range(1, len(medal_counts[0])):
+        #Step 4.2.1: Append medal counts to the content of row i
+        line += "{:>3d}".format(medal_counts[i][j])
+        #Step 4.2.2: Update the row total for row i
+        row_total += medal_counts[i][j]
+        #Step 4.2.3: Update the column total for the column j
+        column_totals[j-1] += medal_counts[i][j]
+    #Step 4.3: Add the row total to the content of the output table for row i
+    line += "{:>3d}".format(row_total)
+    #Step 4.4: Print the content of the output table for row i
+    print(line)
+#Step 5: Print the column totals
+line = "{:>4s}".format("All")
+for j in range(len(column_totals)):
+    line += "{:>3d}".format(column_totals[j])
+print(line)
+```

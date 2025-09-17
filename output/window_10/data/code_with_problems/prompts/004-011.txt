@@ -1,0 +1,61 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ConditionalStatement,IfStatement,
+ConditionalStatement,IfElseStatement,
+ConditionalStatement,IfElifElseStatement,
+ImportStatement,Import,
+ImportStatement,ImportFrom,
+ExceptionHandlingStatement,RaiseStatement,
+ExceptionHandlingStatement,TryStatement,
+ExceptionHandlingStatement,AssertStatement,
+DictionaryMethod,get(),
+DictionaryMethod,keys(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_three_boolean
+#problem description: Construct a program that determines whether at least one of the three boolean variables is True based on the inputs that it receives from the user.
+#Step 1: Read the user input for the value of the first boolean variable (variable a)
+text = input("Enter 1 if the value of the first boolean variable (variable a) is True, otherwise enter 0:")
+input_num = int(text)
+#Step 2: Determine whether the value of the first boolean variable (variable a) is True
+if input_num == 1 :
+    a = True
+else:
+    a = False
+#Step 3: Read the user input for the value of the second boolean variable (variable b)
+text = input("Enter 1 if the value of the second boolean variable (variable b) is True, otherwise enter 0:")
+input_num = int(text)
+#Step 4: Determine whether the value of the second boolean variable (variable b) is True
+if input_num == 1 :
+    b = True
+else:
+    b = False
+#Step 5: Read the user input for the value of the third boolean variable (variable c)
+text = input("Enter 1 if the value of the third boolean variable (variable c) is True, otherwise enter 0:")
+input_num = int(text)
+#Step 6: Determine whether the value of the third boolean variable (variable c) is True
+if input_num == 1 :
+    c = True
+else:
+    c = False
+#Step 7: Write the boolean expression to determine whether at least one of the three boolean variables is True
+result = a or b or c
+#Step 8: Print the result
+if result == True :
+    print("Yes! At least one of the three boolean variables is True.")
+else:
+    print("No! None of the boolean variables are True.")
+```

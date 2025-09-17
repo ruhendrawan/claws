@@ -1,0 +1,31 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+CheckingInForLoop,IfCheckingInForLoop,IfCheckingInForLoop refers to an if statement inside a for loop
+CheckingInForLoop,IfElseCheckingInForLoop,IfElseCheckingInForLoop refers to an if-else statement inside a for loop
+CheckingInForLoop,IfElifElseCheckingInForLoop,IfElifElseCheckingInForLoop refers to an if-elif-else statement inside a for loop
+CheckingInForLoop,IfElifCheckingInForLoop,IfElifCheckingInForLoop refers to an if-elif statement inside a for loop
+CheckingInWhileLoop,IfElseCheckingInWhileLoop,IfElseCheckingInWhileLoop refers to an if-else statement inside a while loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_concat_str_num
+#problem description: Construct a program that uses variables x, y, and z to print "Python was invented in 1989.".
+#Step 1: Assign initial values to the variables x, y, and z
+x = "Python was invented in "
+y = 1989
+z = "."
+#Step 2: Print the text using the variables initialized above
+print(x + str(y) + z)
+```

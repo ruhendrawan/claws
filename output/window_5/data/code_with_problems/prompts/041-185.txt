@@ -1,0 +1,53 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+CheckingInForLoop,IfCheckingInForLoop,IfCheckingInForLoop refers to an if statement inside a for loop
+CheckingInForLoop,IfElseCheckingInForLoop,IfElseCheckingInForLoop refers to an if-else statement inside a for loop
+CheckingInForLoop,IfElifElseCheckingInForLoop,IfElifElseCheckingInForLoop refers to an if-elif-else statement inside a for loop
+CheckingInForLoop,IfElifCheckingInForLoop,IfElifCheckingInForLoop refers to an if-elif statement inside a for loop
+CheckingInWhileLoop,IfElseCheckingInWhileLoop,IfElseCheckingInWhileLoop refers to an if-else statement inside a while loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_print_medals
+#problem description: Assume that we have a 7x4 matrix that stores the number of medals that seven countries won in the skating competitions at the Winter Olympic. This matrix looks like as follows: [[ "Canada", 1, 0, 1 ],[ "China", 1, 1, 0 ],...] Each row of this matrix corresponds to the medal counts for the country in that row. The second, third, and fourth numbers within a row represent the number of Gold, Silver, and Bronze medals won by the corresponding country in that row. Construct a program that takes this matrix and prints a table of medal counts with row total that shows the number of Gold, Silver, Bronze, and Total medals for each of the countries who participated in the competition. The output table should look like as follows:
+#    Country    Gold  Silver  Bronze   Total
+#     Canada        1       0       1            2
+#      China        1       1       0            2
+#Step 1: Define a 7x4 matrix that stores the number of medals won by seven countries
+medal_counts = [[ "CAN", 1, 0, 1 ],
+                [ "CHN", 1, 1, 0 ],
+                [ "GER", 0, 0, 1 ],
+                [ "KOR", 1, 0, 0 ],
+                [ "JPN", 0, 1, 1 ],
+                [ "RUS", 0, 1, 1 ],
+                [ "USA", 1, 1, 0 ]]
+#Step 2: Print the header of the output table
+print("{:>4s}{:>3s}{:>3s}{:>3s}{:>4s}".format("Name","G","S","B","All"))
+#Step 3: Iterate through the rows in the medal counts matrix
+for i in range(len(medal_counts)):
+    #Step 3.1: Assign initial values to variables we need for printing row i
+    line = "{:>4s}".format(medal_counts[i][0])
+    row_total = 0
+    #Step 3.2: Iterate through the columns that have medal counts
+    for j in range(1, len(medal_counts[0])):
+        #Step 3.2.1: Append medal counts to the content of row i
+        line += "{:>3d}".format(medal_counts[i][j])
+        #Step 3.2.2: Update the row total for row i
+        row_total += medal_counts[i][j]
+    #Step 3.3: Add the row total to the content of the output table for row i
+    line += "{:>3d}".format(row_total)
+    #Step 3.4: Print the content of the output table for row i
+    print(line)
+```

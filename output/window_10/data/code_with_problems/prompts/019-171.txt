@@ -1,0 +1,38 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingString,IndexingString,
+HandlingString,FormattingString,f string
+HandlingString,ReplacingStringContent,
+HandlingString,TransformingToStringType,
+HandlingString,CreatingString,str()
+HandlingString,TrimmingString,strip() or rstrip()
+ModifyingStringCase,ConvertStringToUpperCase,
+ModifyingStringCase,CapitalizeString,
+ModifyingStringCase,ConvertStringToLowerCase,
+HandlingFunction,CallingFunctionLibrary,"CallingFunctionLibrary refers to ANY use of built-in Python functions (print, len, replace, etc.) and built-in methods of objects (like list.append() or string.replace(), etc.)."
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_list2d_basic3 
+#problem description: Construct a program that initializes a 2x4 two-dimensional matrix that has multiples of 10 from 10 to 80 for entries, updates the last row to a list holding values 1,3,5,7, then sets the second element of the first row to be 8, and finally prints the matrix.
+#Step 1: Define a 2x4 two-dimensional list
+matrix = [[ 10, 20, 30, 40 ],
+        [ 50, 60, 70, 80 ]]
+#Step 2: Update the two-dimensional list
+matrix[1] = [1, 3, 5, 7]
+matrix[0][1] = 8
+#Step 3: Print the list
+print(matrix)
+```

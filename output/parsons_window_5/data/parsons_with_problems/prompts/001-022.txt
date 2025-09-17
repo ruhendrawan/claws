@@ -1,0 +1,34 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+BuiltInFunction,min(),
+BuiltInFunction,tuple(),
+BuiltInFunction,open(),
+BuiltInFunction,input(),
+BuiltInFunction,next(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_printing_file_contents
+#problem description: Construct a program that opens up a file and prints out each line of the file
+try:
+file_to_read = open(filename, "r")
+row = file_to_read.readline()
+while row != "":
+print(row)
+row = file_to_read.readline()
+file_to_read.close()
+except OSError:
+print("Error reading the file. The program execution ends.")
+```

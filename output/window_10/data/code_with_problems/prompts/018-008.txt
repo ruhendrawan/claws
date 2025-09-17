@@ -1,0 +1,51 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingDictionary,CreatingDictionary,
+HandlingTuple,IndexingTuple,
+HandlingTuple,SlicingTuple,
+HandlingTuple,CreatingTuple,
+HandlingFloat,TransformingToFloatType,
+HandlingFile,OpeningFile,
+HandlingFile,ReadingLine,
+HandlingFile,ClosingFile,
+HandlingString,SlicingString,
+HandlingString,SplittingString,.split() or rsplit()
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_rent_car3
+# problem description: Construct a program that determines whether a customer could rent a car based on the inputs that it receives from the car rental agent. Rental cars are available to licensed drivers who are either at least 21 years old or have a credit card with $10,000 or more of credit.
+#Step 1: Read the input for the customer's age
+text = input("Enter the customer's age:")
+age = int(text)
+#Step 2: Read the input for determining whether the customer has driver's license
+text = input("Enter 1 if the customer has driver's license, otherwise enter 0:")
+input_num = int(text)
+#Step 3: Determine whether the customer has driver's license
+if input_num == 1 :
+    has_license = True
+else:
+    has_license = False
+#Step 4: Read the input for the customer's credit amount
+text = input("Enter the customer's credit amount:")
+credit = int(text)
+#Step 5: Write the boolean expression to determine whether a customer could rent a car
+can_rent_car = has_license and (age >= 21 or credit >= 10000)
+#Step 6: Print the result
+if can_rent_car == True :
+    print("Yes! The customer could rent a car.")
+else:
+    print("No! The customer could not rent a car.")
+```

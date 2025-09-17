@@ -1,0 +1,35 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ForLoopWithUpdate,ForLoopWith*=,ForLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a for loop
+WhileLoopWithUpdate,WhileLoopWith*=,WhileLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a while loop
+WhileLoopWithUpdate,WhileLoopWithListIndexing,WhileLoopWithListIndexing refers to when there is an indexing of a list happening inside a while loop
+WhileLoopWithUpdate,WhileLoopWith+=,WhileLoopWith+= refers to when there is an update of a variable with the addition sign inside a while loop
+NestedLoopIteration,NestedWhileLoopIteration,NestedWhileLoopIteration refers to nested loop such that a while-loop is inside another while-loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_divisible_by2
+#problem description: Construct a program which checks whether each of the integers in interval from 1 to 100 is divisible by 2, 5, or both.
+num = 100
+for i in range(1, num + 1):
+    if i % 2 == 0 and i % 5 == 0:
+        print(i, "is divisible by 2 & 5")
+    elif i % 5 == 0:
+        print(i, "is only divisible by 5")
+    elif i % 2 == 0:
+        print(i, "is only divisible by 2")
+    else:           
+        print(i, "is not divisible by 2 nor 5")
+```

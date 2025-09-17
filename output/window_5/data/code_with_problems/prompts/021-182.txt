@@ -1,0 +1,41 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Python,FindingLength,refers to the expression len()
+Python,CheckingForItem,check for item with the 'in' construct
+Python,Concatenation,
+Python,HandlingInput,
+Python,Printing,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_list_rotate_left_twice
+#problem description: Construct a program that has a function that receives a list of values and returns the list rotated to the left by 2 position so that the value at the front of the list goes to the second last position, the second value of the list goes to the back, and the order of the other values stays the same. For example, if the list is [1, 2, 3, 4, 5, 6], the program will change it to [3, 4, 5, 6, 1, 2].
+#Step 1: Define the function
+def rotate_left_by_2(lst):
+    #Step 1.1: Store the first two values of the list in local variables
+    first = lst[0]
+    second = lst[1]
+    #Step 1.2: Rotate the remaining values of the list to the left by 2 position
+    for i in range(len(lst)-2):
+        lst[i] = lst[i + 2]
+    #Step 1.3: Move the first two values of the list to the back of the list
+    lst[len(lst)-2] = first
+    lst[len(lst)-1] = second
+    return lst
+#Step 2: Call the function
+values = [3, 8, 9, 8, 7, 5]
+print("Original list:", values)
+print("Rotated list: ", rotate_left_by_2(values))
+```

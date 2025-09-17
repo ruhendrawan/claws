@@ -1,0 +1,45 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ListMethod,append(),
+ListMethod,reverse(),
+ListMethod,remove(),
+DictionaryMethod,get(),
+DictionaryMethod,items(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_first_char_words_dict
+#problem description: Construct a program that has a function which receives a string and creates a dictionary that maps each character to the list of distinct words in the given string that start with that character. The dictionary should be case insensitive. For example, if the given string is "This is my test score", the program creates the following dictionary: t : ['this', 'test'], i : ['is'], m : ['my'], s : ['score']
+#Step 1: Define the function
+def create_dictionary(s):
+    #Step 1.1: Create an empty dictionary
+    res_dict = {}
+    #Step 1.2: Split the given string into words
+    s = s.lower()
+    words = s.split()
+    #Step 1.3: Update the dictionary entries as we iterate through the words
+    for word in words:
+        if word[0] in res_dict:
+            if word not in res_dict[ word[0] ] :
+                res_dict[ word[0] ].append(word)
+        else:
+            res_dict[ word[0] ] = [ word ]
+    #Step 1.4: Print the dictionary
+    for char in res_dict:
+        print(char, ":", res_dict[char])
+#Step 2: Call the function
+s = input("Enter a string: ")
+create_dictionary(s)
+```

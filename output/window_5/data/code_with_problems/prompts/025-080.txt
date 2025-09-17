@@ -1,0 +1,50 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedWhileLoopIteration). Do not also include the single-loop categories for the outer loop"
+NonNestedIteration,SingleForLoopIteration,"SingleForLoopIteration refers to a single use use of a for-loop that has no nested structure
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedForLoopIteration). Do not also include the single-loop categories for the outer loop"
+WhileLoopWithUpdate,WhileLoopWith+=,WhileLoopWith+= refers to when there is an update of a variable with the addition sign inside a while loop
+WhileLoopWithUpdate,WhileLoopWith*=,WhileLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a while loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_vending_machine2
+#problem description: Suppose we have a vending machine that gives change. A customer selects an item for purchase and inserts a bill into the vending machine. The vending machine dispenses the purchased item and gives change. We will assume that all item prices are multiples of 5 cents, and the machine gives all change in quarters, dimes, and nickels. Construct a program that computes how many quarters, dimes, and nickels to return to the customer.
+#Step 1: Assign initial values to the variables which we need for this program
+pennies_per_dollar = 100
+pennies_per_quarter = 25
+pennies_per_dime = 10
+pennies_per_nickel = 5
+#Step 2: Read the bill value and item price
+text = input("Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.): ")
+bill_value = int(text)
+text = input("Enter item price in pennies: ")
+itemPrice = int(text)
+#Step 3: Compute the change due
+change_due = pennies_per_dollar * bill_value - itemPrice
+#Step 4: Compute the number of quarters in the change due and update the change due after taking away the quarters
+quarters = change_due // pennies_per_quarter
+change_due = change_due % pennies_per_quarter
+#Step 5: Compute the number of dimes in the remaining change due and update the change due after taking away the dimes
+dimes = change_due // pennies_per_dime
+change_due = change_due % pennies_per_dime
+#Step 6: Compute the number of nickels in the remaining change due
+nickels = change_due // pennies_per_nickel
+#Step 7: Display the result
+print("Your change consists of:")
+print(quarters, "quarters")
+print(dimes, "dimes")
+print(nickels, "nickels")
+```

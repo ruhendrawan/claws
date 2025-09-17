@@ -1,0 +1,36 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+NestedLoopIteration,NestedForLoopIteration,NestedForLoopIteration refers to nested loop such that  a for-loop is inside another for-loop
+NestedLoopIteration,NestedWhileLoopIteration,NestedWhileLoopIteration refers to nested loop such that a while-loop is inside another while-loop
+ForLoopWithUpdate,ForLoopWith+=,ForLoopWith+= refers to when there is an update of a variable with the addition sign inside a for loop
+ForLoopWithUpdate,ForLoopWith*=,ForLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a for loop
+ForLoopWithUpdate,ForLoopWithListIndexing,ForLoopWithListIndexing refers to when there is an indexing of a list happening inside a for  loop
+WhileLoopWithUpdate,WhileLoopWith*=,WhileLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a while loop
+WhileLoopWithUpdate,WhileLoopWith+=,WhileLoopWith+= refers to when there is an update of a variable with the addition sign inside a while loop
+WhileLoopWithUpdate,WhileLoopWithListIndexing,WhileLoopWithListIndexing refers to when there is an indexing of a list happening inside a while loop
+ArithmeticOperation,Multiplication,
+ArithmeticOperation,FindRemainder,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: q_py
+#exercise name: q_py_topic_strings:q_py_concat_strings1
+sep = "!"
+result = ""
+i = 0
+while i < 3:
+    result += "ha" + sep
+    i += 1
+print(result)
+```

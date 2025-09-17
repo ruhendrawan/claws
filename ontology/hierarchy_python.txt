@@ -1,0 +1,290 @@
+{
+  "Python": [
+    "Expression",
+    "Exception",
+    "Method",
+    "Operator",
+    "Statement",
+    "BuiltInFunction"
+  ],
+  "Expression": [
+    "SubscriptExpression",
+    "Call",
+    "ArithmeticExpression",
+    "LogicalExpression",
+    "Literal"
+  ],
+  "SubscriptExpression": [
+    "IndexingExpression",
+    "SlicingExpression"
+  ],
+  "IndexingExpression": [],
+  "SlicingExpression": [],
+  "Call": [
+    "FunctionCall"
+  ],
+  "FunctionCall": [],
+  "ArithmeticExpression": [
+    "BinaryOperation",
+    "UnaryOperation"
+  ],
+  "BinaryOperation": [],
+  "UnaryOperation": [],
+  "LogicalExpression": [
+    "ComparisonExpression",
+    "BooleanExpression"
+  ],
+  "ComparisonExpression": [],
+  "BooleanExpression": [],
+  "Literal": [
+    "NumericLiteral",
+    "StringLiteral",
+    "BooleanLiteral",
+    "NoneLiteral",
+    "LiteralCollection"
+  ],
+  "NumericLiteral": [
+    "FloatLiteral",
+    "IntegerLiteral"
+  ],
+  "FloatLiteral": [],
+  "IntegerLiteral": [],
+  "StringLiteral": [],
+  "BooleanLiteral": [],
+  "NoneLiteral": [],
+  "LiteralCollection": [
+    "TupleLiteral",
+    "SetLiteral",
+    "ListLiteral",
+    "DictLiteral"
+  ],
+  "TupleLiteral": [],
+  "SetLiteral": [],
+  "ListLiteral": [],
+  "DictLiteral": [],
+  "Exception": [
+    "Error"
+  ],
+  "Error": [
+    "TypeError",
+    "OSError",
+    "IndexError",
+    "IOError",
+    "FileNotFoundError",
+    "ValueError",
+    "AssertionError"
+  ],
+  "TypeError": [],
+  "OSError": [],
+  "IndexError": [],
+  "IOError": [],
+  "FileNotFoundError": [],
+  "ValueError": [],
+  "AssertionError": [],
+  "Method": [
+    "StringMethod",
+    "DictionaryMethod",
+    "ClassMethod",
+    "ListMethod",
+    "FileMethod"
+  ],
+  "StringMethod": [
+    "split()",
+    "lower()",
+    "join()",
+    "format()",
+    "capitalize()",
+    "rstrip()",
+    "replace()"
+  ],
+  "split()": [],
+  "lower()": [],
+  "join()": [],
+  "format()": [],
+  "capitalize()": [],
+  "rstrip()": [],
+  "replace()": [],
+  "DictionaryMethod": [
+    "values()",
+    "keys()",
+    "items()",
+    "get()"
+  ],
+  "values()": [],
+  "keys()": [],
+  "items()": [],
+  "get()": [],
+  "ClassMethod": [
+    "__init()__"
+  ],
+  "__init()__": [],
+  "ListMethod": [
+    "reverse()",
+    "insert()",
+    "remove()",
+    "append()",
+    "pop()"
+  ],
+  "reverse()": [],
+  "insert()": [],
+  "remove()": [],
+  "append()": [],
+  "pop()": [],
+  "FileMethod": [
+    "readline()",
+    "close()",
+    "read()"
+  ],
+  "readline()": [],
+  "close()": [],
+  "read()": [],
+  "Operator": [
+    "ComparisonOperator",
+    "=",
+    "MembershipOperator",
+    "LogicalOperator",
+    "ArtithmeticOperator"
+  ],
+  "ComparisonOperator": [
+    "LessOrEqual",
+    "Less",
+    "Larger",
+    "LargerOrEqual",
+    "==",
+    "NotEqual"
+  ],
+  "LessOrEqual": [],
+  "Less": [],
+  "Larger": [],
+  "LargerOrEqual": [],
+  "==": [],
+  "NotEqual": [],
+  "=": [],
+  "MembershipOperator": [
+    "in"
+  ],
+  "in": [],
+  "LogicalOperator": [
+    "and",
+    "or",
+    "not"
+  ],
+  "and": [],
+  "or": [],
+  "not": [],
+  "ArtithmeticOperator": [
+    "//",
+    "-",
+    "+",
+    "/",
+    "**",
+    "Modulus",
+    "*"
+  ],
+  "//": [],
+  "-": [],
+  "+": [],
+  "/": [],
+  "**": [],
+  "Modulus": [],
+  "*": [],
+  "Statement": [
+    "ConditionalStatement",
+    "ImportStatement",
+    "ExpressionStatement",
+    "JumpStatement",
+    "IterationStatement",
+    "ExceptionHandlingStatement",
+    "AssignmentStatement",
+    "DefinitionStatement"
+  ],
+  "ConditionalStatement": [
+    "IfElifElseStatement",
+    "IfStatement",
+    "IfElseStatement",
+    "IfElifStatement"
+  ],
+  "IfElifElseStatement": [],
+  "IfStatement": [],
+  "IfElseStatement": [],
+  "IfElifStatement": [],
+  "ImportStatement": [
+    "Import",
+    "ImportFrom"
+  ],
+  "Import": [],
+  "ImportFrom": [],
+  "ExpressionStatement": [],
+  "JumpStatement": [
+    "PassStatement",
+    "BreakStatement",
+    "ContinueStatement",
+    "ReturnStatement"
+  ],
+  "PassStatement": [],
+  "BreakStatement": [],
+  "ContinueStatement": [],
+  "ReturnStatement": [],
+  "IterationStatement": [
+    "ForStatement",
+    "WhileStatement"
+  ],
+  "ForStatement": [],
+  "WhileStatement": [],
+  "ExceptionHandlingStatement": [
+    "TryStatement",
+    "RaiseStatement",
+    "AssertStatement"
+  ],
+  "TryStatement": [],
+  "RaiseStatement": [],
+  "AssertStatement": [],
+  "AssignmentStatement": [
+    "SimpleAssignmentStatement",
+    "AugmentedAssignmentStatement"
+  ],
+  "SimpleAssignmentStatement": [],
+  "AugmentedAssignmentStatement": [],
+  "DefinitionStatement": [
+    "FunctionDefinition",
+    "ClassDefinition"
+  ],
+  "FunctionDefinition": [],
+  "ClassDefinition": [],
+  "BuiltInFunction": [
+    "dict()",
+    "str()",
+    "next()",
+    "input()",
+    "int()",
+    "max()",
+    "float()",
+    "set()",
+    "open()",
+    "range()",
+    "tuple()",
+    "abs()",
+    "round()",
+    "len()",
+    "min()",
+    "print()",
+    "list()"
+  ],
+  "dict()": [],
+  "str()": [],
+  "next()": [],
+  "input()": [],
+  "int()": [],
+  "max()": [],
+  "float()": [],
+  "set()": [],
+  "open()": [],
+  "range()": [],
+  "tuple()": [],
+  "abs()": [],
+  "round()": [],
+  "len()": [],
+  "min()": [],
+  "print()": [],
+  "list()": []
+}

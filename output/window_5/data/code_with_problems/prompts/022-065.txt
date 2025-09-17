@@ -1,0 +1,39 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Python,Importing,
+HandlingObjectOrientedProgramming,DefiningClass,
+HandlingObjectOrientedProgramming,DefiningOOPMethod,
+HandlingObjectOrientedProgramming,CallingOOPMethod,
+HandlingObjectOrientedProgramming,CreatingObject,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ae
+#exercise name: ae_adl_dict3
+def main():
+  ages = {}
+  ages["Mark"] = 7
+  ages["Susan"] = 16
+  ages["Bill"] = 36
+  ages["Lisa"] = 22
+  oldest = None
+  max_age = None
+  for person in ages:
+    if oldest == None or ages[person] > max_age:
+      oldest = person
+      max_age = ages[person]
+  print("The oldest is:", oldest)
+  print("Years:", max_age)
+main()
+```

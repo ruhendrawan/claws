@@ -1,0 +1,28 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingFunctionCallingFunction,DefiningFunctionCallingFunction,
+HandlingFunctionCallingFunction,CallingFunctionCallingFunction,
+HandlingRecursiveFunction,CallingRecursiveFunction,CallingRecursiveFunction refers to calling a function that calls itself (recursion)
+HandlingRecursiveFunction,DefiningRecursiveFunction,DefiningRecursiveFunction refers to defining a function that calls itself within its own body (recursion).
+ManagingVariable,UpdatingVariable,UpdatingVariable refers to when a variable that was already assigned to a value is update (e.g. x+=1 or x=x+1)
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_add_to_list
+#problem description: Construct a function that adds a given amount to all items in a list.
+def add_to_list_items(alist, amount):
+	for x in range(len(alist)):
+		alist[x] += amount
+```

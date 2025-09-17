@@ -1,0 +1,28 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingString,TransformingToStringType,
+ModifyingStringCase,CapitalizeString,
+ModifyingStringCase,ConvertStringToLowerCase,
+ModifyingStringCase,ConvertStringToUpperCase,
+HandlingInteger,TransformingToIntType,"float()
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: q_py
+#exercise name: q_py_topic_logical_operators:q_py_comparison_logic1
+number1 = 9
+number2 = 5
+print(number1 < number2)
+print(number1 != number2)
+```

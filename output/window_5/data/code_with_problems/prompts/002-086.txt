@@ -1,0 +1,38 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+StringMethod,rstrip(),
+StringMethod,lower(),
+StringMethod,format(),
+ListMethod,insert(),
+ListMethod,pop(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_ifelseif_grade2
+#problem description: Construct a program that receives a grade from the user and prints the numeric range for that grade using the following grading rules: A for scores ≥ 90, B for scores ≥ 80, C for scores ≥ 70, D for scores ≥ 60, F for scores < 60, For example, if the user enters the grade D, the program prints "Score is in range [60-70)". 
+#Step 1: Read the letter grade
+grade = input("Enter a grade letter in uppercase: ")
+#Step 2: Determine and print the numeric range for the input letter grade
+if grade == "A" :
+    print("Score is greater than or equal 90.")
+elif grade == "B" :
+    print("Score is in range [80-90).")
+elif grade == "C" :
+    print("Score is in range [70-80).")
+elif grade == "D" :
+    print("Score is in range [60-70).")
+else :
+    print("Score is below 60.")
+```
