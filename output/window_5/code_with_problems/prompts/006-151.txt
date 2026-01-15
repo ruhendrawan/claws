@@ -1,0 +1,47 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Error,IOError,
+Error,ValueError,
+Operator,=,=
+LogicalOperator,not,
+LogicalOperator,or,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: q_py
+#exercise name: q_topic_classes_objects:q_py_inheritance_animal1
+class Aminal:
+    def set_age(self, age):
+        self.age = age
+    def get_age(self):
+          return self.age
+    def speak(self):
+          return "gibberish"
+class Dog(Aminal):
+    def speak(self):
+        return "wow-wow"
+class Man(Aminal): 
+    def speak(self):
+        return "How are you doing?"
+def main():
+    m = Man()
+    m.set_age(9*2)
+    d = Dog()
+    d.set_age(9)
+    print(m.speak())
+    print(m.get_age())
+    print(d.speak())
+    print(d.get_age())
+main()
+```

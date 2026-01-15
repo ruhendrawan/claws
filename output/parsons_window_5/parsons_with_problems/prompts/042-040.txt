@@ -1,0 +1,31 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ManagingVariable,AssigningVariable,
+HandlingError,HandlingSpecificError,Using try and except block with the specific error
+HandlingError,HandlingGeneralError,"Using try and except block as ""except Exception as e:"""
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_freq_of_char1
+#problem description: Construct a function which counts the frequency of each character in the string given as a parameter and returns a dictionary containing the fequencies.
+def freq_of_char(str):
+    num_of_char = {}
+    for letter in str:
+        if letter in num_of_char:
+            num_of_char[letter] += 1
+        else:
+            num_of_char[letter] = 1
+    return num_of_char
+```

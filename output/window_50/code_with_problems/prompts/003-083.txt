@@ -1,0 +1,83 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Python,Concatenation,
+Python,Importing,
+Python,FindingLength,refers to the expression len()
+Python,Printing,
+Python,CheckingForItem,check for item with the 'in' construct
+Python,HandlingInput,
+CheckingCondition,IfElseChecking,IfElseChecking refers to an if-else statement which is not placed inside any loop
+CheckingCondition,AssertChecking,
+CheckingCondition,IfElifElseChecking,IfElifElseChecking refers to an if-elif-else statement which is not placed inside any loop
+CheckingCondition,NestedIfChecking,"Nested If Checking refers to having an if, elif, or else block inside another if, elif, or else block."
+CheckingCondition,IfChecking,IfChecking refers to an if statement which is not placed inside any loop
+CheckingCondition,IfElifChecking,IfElifChecking refers to an if-elif statement which is not placed inside any loop
+CheckingCondition,BooleanEvaluating,Evaluating boolean expressions
+CheckingInForLoop,IfElseCheckingInForLoop,IfElseCheckingInForLoop refers to an if-else statement inside a for loop
+CheckingInForLoop,IfElifCheckingInForLoop,IfElifCheckingInForLoop refers to an if-elif statement inside a for loop
+CheckingInForLoop,IfCheckingInForLoop,IfCheckingInForLoop refers to an if statement inside a for loop
+CheckingInForLoop,IfElifElseCheckingInForLoop,IfElifElseCheckingInForLoop refers to an if-elif-else statement inside a for loop
+CheckingInWhileLoop,IfElifElseCheckingInWhileLoop,IfElifElseCheckingInWhileLoop refers to an if-elif-else statement inside a while loop
+CheckingInWhileLoop,IfCheckingInWhileLoop,IfCheckingInWhileLoop refers to an if statement inside a while loop
+CheckingInWhileLoop,IfElseCheckingInWhileLoop,IfElseCheckingInWhileLoop refers to an if-else statement inside a while loop
+CheckingInWhileLoop,IfElifCheckingInWhileLoop,IfElifCheckingInWhileLoop refers to an if-elif statement inside a while loop
+ManagingVariable,SwappingVariablesValue,"Refers to when variables are swapped (e.g.
+temp =a
+a=b
+b=temp
+)"
+ManagingVariable,AssigningVariable,
+ManagingVariable,UpdatingVariable,UpdatingVariable refers to when a variable that was already assigned to a value is update (e.g. x+=1 or x=x+1)
+HandlingAdvancedDataStructure,BinaryTreeTask,
+HandlingAdvancedDataStructure,LinkedListTask,
+HandlingAdvancedDataStructure,QueueTask,
+HandlingAdvancedDataStructure,StackTask,
+TwoDimensionalArrayTask,ReplacingElement2DArray,
+TwoDimensionalArrayTask,Indexing2DArray,
+TwoDimensionalArrayTask,Create2DArray,
+HandlingObjectOrientedProgramming,CallingOOPMethod,
+HandlingObjectOrientedProgramming,CreatingObject,
+HandlingObjectOrientedProgramming,DefiningClass,
+HandlingObjectOrientedProgramming,DefiningOOPMethod,
+HandlingFunction,CallingFunctionLibrary,"CallingFunctionLibrary refers to ANY use of built-in Python functions (print, len, replace, etc.) and built-in methods of objects (like list.append() or string.replace(), etc.)."
+HandlingFunction,NestedFunctionCall,"NestedFunctionCall refers to when one function call is placed as an argument to another function call (e.g., f(g(x)))"
+HandlingFunctionCallingFunction,CallingFunctionCallingFunction,
+HandlingFunctionCallingFunction,DefiningFunctionCallingFunction,
+HandlingRecursiveFunction,CallingRecursiveFunction,CallingRecursiveFunction refers to calling a function that calls itself (recursion)
+HandlingRecursiveFunction,DefiningRecursiveFunction,DefiningRecursiveFunction refers to defining a function that calls itself within its own body (recursion).
+HandlingNestedFunction,CallingNestedFunction,CallingNestedFunction refers to the call of functions that have in their code the definition of other user-defined functions
+HandlingNestedFunction,DefiningNestedFunction,DefiningNestedFunction refers to defining a function inside another user-defined function.
+HandlingStandardFunction,CallingStandardFunction,CallingStandardFunction refers to calling a function that meets all the 3 following criteria:1) Does not call any other user-defined functions 2) Is not nested inside another function 3) Does not call itself (not recursive) Note: A standard function may still call built-in functions.
+HandlingStandardFunction,DefiningStandardFunction,"DefiningStandardFunction refers to defining a function that: 1) Does not call any other user-defined functions 2) Is not nested inside another function 3) Does not call itself (not recursive) Note: A standard function may still call built-in functions. Additionally, DefiningStandardFunction can still be later called in nested patterns (NestedFunctionCall)."
+NonNestedIteration,SingleForLoopIteration,"SingleForLoopIteration refers to a single use use of a for-loop that has no nested structure
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_nested_if_temperature
+#problem description: Construct a program that receives the temperature for today and yesterday and warns the user when it is getting colder or warmer or neither. The temperature values could have a decimal point.
+#Step 1: Read the temperature for today and yesterday
+text = input("Enter the yesterday's temperature: ")
+yesterday = float(text)
+text = input("Enter the today's temperature: ")
+today = float(text)
+#Step 2: Warn the user about the changes in the temperature
+if  today < yesterday :
+    print("It is getting colder!")
+else :
+    if  today > yesterday :
+        print("It is getting warmer!")
+    else :
+        print("Temperature is the same as yesterday!")
+```

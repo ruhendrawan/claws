@@ -1,0 +1,37 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+BuiltInFunction,dict(),
+BuiltInFunction,list(),
+BuiltInFunction,print(),
+BuiltInFunction,abs(),
+BuiltInFunction,set(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_even_first4
+#problem description: Construct a program which partition the original list of integers such that all even numbers come first and all odd numbers come after them.
+lst = [8, 3, 2, 5, 7, 5, 6]
+result = []
+odds = []
+for n in lst:
+    if n % 2 == 0:
+        result.append(n)
+    else:
+        odds.append(n)
+
+for i in range(len(odds)):
+    result.append(odds[i])
+print(result)
+```

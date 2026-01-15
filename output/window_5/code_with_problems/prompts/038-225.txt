@@ -1,0 +1,32 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ArithmeticOperation,Power,
+ArithmeticOperation,FindRemainder,
+ArithmeticOperation,FindAbsolute,
+ArithmeticOperation,Addition,
+ArithmeticOperation,Multiplication,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_divisor
+#problem description: Construct a program that finds the smallest divisor (other than 1) of a positive number. For example, the smallest divisor of 4 is 2.
+#Step 1: Assign initial values to the variables which we need for this program
+num = 15
+divisor = 2
+#Step 2: Find the smallest divisor of the number
+while num % divisor != 0 :
+    divisor += 1
+print("The smallest divisor of", num, "is", divisor)
+```

@@ -1,0 +1,34 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Statement,ExpressionStatement,
+ImportStatement,Import,
+ImportStatement,ImportFrom,
+AssignmentStatement,AugmentedAssignmentStatement,An augmented assignment statement is += 1
+AssignmentStatement,SimpleAssignmentStatement,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_freq_of_char2
+#problem description: Construct a program which counts the frequency of each character in string 'Summer' and stores it in a dictionary. Finally, the program should print the dictionary.
+str = "Summer"
+num_of_char = {}
+for letter in str:
+    if letter in num_of_char:
+        num_of_char[letter] += 1
+    else:
+        num_of_char[letter] = 1
+
+print(num_of_char)
+```

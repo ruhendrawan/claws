@@ -1,0 +1,43 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+LogicalExpression,BooleanExpression,
+LogicalExpression,ComparisonExpression,
+ArithmeticExpression,BinaryOperation,
+ArithmeticExpression,UnaryOperation,
+Literal,BooleanLiteral,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: q_py
+#exercise name: q_topic_classes_objects:q_py_obj_account1
+class Account:
+    def __init__(self, deposit=0):
+        self.balance = deposit
+    def deposit(self, sum):
+        self.balance += sum
+    def withdraw(self, sum):
+        self.balance -= sum
+    def get_balance(self):
+        return self.balance
+def main():
+    accounts = {}
+    accounts[0] = Account()
+    accounts[1] = Account(244)
+    accounts[0].deposit(244)
+    accounts[1].deposit(244)
+    accounts[0].withdraw(244-50)
+    accounts[1].withdraw(244-100)
+    print(accounts[0].get_balance() + accounts[1].get_balance())
+main()
+```

@@ -1,0 +1,34 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ConditionalStatement,IfStatement,
+ConditionalStatement,IfElseStatement,
+ConditionalStatement,IfElifElseStatement,
+ImportStatement,Import,
+ImportStatement,ImportFrom,
+ExceptionHandlingStatement,RaiseStatement,
+ExceptionHandlingStatement,TryStatement,
+ExceptionHandlingStatement,AssertStatement,
+DictionaryMethod,get(),
+DictionaryMethod,keys(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_dict_values
+#problem description: Construct a program that prints out how many items in total are in storage. You can assume that a dictionary called storage has already been initialized.
+total_items = 0
+for item_count in storage.values():
+    total_items += item_count
+print(total_items)
+```

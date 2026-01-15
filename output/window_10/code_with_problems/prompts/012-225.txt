@@ -1,0 +1,37 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+CheckingCondition,IfElifElseChecking,IfElifElseChecking refers to an if-elif-else statement which is not placed inside any loop
+CheckingCondition,NestedIfChecking,"Nested If Checking refers to having an if, elif, or else block inside another if, elif, or else block."
+CheckingCondition,IfElifChecking,IfElifChecking refers to an if-elif statement which is not placed inside any loop
+CheckingInWhileLoop,IfElifElseCheckingInWhileLoop,IfElifElseCheckingInWhileLoop refers to an if-elif-else statement inside a while loop
+CheckingInWhileLoop,IfElseCheckingInWhileLoop,IfElseCheckingInWhileLoop refers to an if-else statement inside a while loop
+CheckingInWhileLoop,IfElifCheckingInWhileLoop,IfElifCheckingInWhileLoop refers to an if-elif statement inside a while loop
+CheckingInWhileLoop,IfCheckingInWhileLoop,IfCheckingInWhileLoop refers to an if statement inside a while loop
+CheckingInForLoop,IfElifCheckingInForLoop,IfElifCheckingInForLoop refers to an if-elif statement inside a for loop
+CheckingInForLoop,IfCheckingInForLoop,IfCheckingInForLoop refers to an if statement inside a for loop
+CheckingInForLoop,IfElifElseCheckingInForLoop,IfElifElseCheckingInForLoop refers to an if-elif-else statement inside a for loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_divisor
+#problem description: Construct a program that finds the smallest divisor (other than 1) of a positive number. For example, the smallest divisor of 4 is 2.
+#Step 1: Assign initial values to the variables which we need for this program
+num = 15
+divisor = 2
+#Step 2: Find the smallest divisor of the number
+while num % divisor != 0 :
+    divisor += 1
+print("The smallest divisor of", num, "is", divisor)
+```

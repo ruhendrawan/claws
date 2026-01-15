@@ -1,0 +1,35 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+DictionaryMethod,keys(),
+DictionaryMethod,values(),
+FileMethod,readline(),
+FileMethod,read(),
+FileMethod,close(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ae
+#exercise name: ae_python_function
+def calculate_area(width, height):
+  print("Dimensions are:", width, height)
+  result = width * height
+  return height
+def main():
+  side1 = 12
+  side2 = 10
+  area = calculate_area(side1, side2)
+  print("Area is:", area)
+  print("Area is:", calculate_area(2+3, 7+2))
+main()
+```

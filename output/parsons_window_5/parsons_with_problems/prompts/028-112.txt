@@ -1,0 +1,32 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingString,IndexingString,
+ModifyingStringCase,CapitalizeString,
+ModifyingStringCase,ConvertStringToUpperCase,
+ModifyingStringCase,ConvertStringToLowerCase,
+HandlingFile,ReadingLine,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_pandas_groupby_3
+#problem description: You're provided a dataframe of used cars using pandas. Group the data by 'type' and find the maximum mileage for each type.
+import pandas as pd
+
+df = pd.read_csv("used_cars.csv")
+
+grouped_by_type = df.groupby("type")["mileage"].max()
+
+print(grouped_by_type)
+```

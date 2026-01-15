@@ -1,0 +1,53 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+FileMethod,read(),
+FileMethod,readline(),
+FileMethod,close(),
+ListMethod,pop(),
+ListMethod,insert(),
+ListMethod,reverse(),
+ListMethod,remove(),
+ListMethod,append(),
+Error,FileNotFoundError,
+Error,TypeError,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_boolean_dry_hot3
+#problem description: Construct a program that determines whether it is too hot but not too dry based on the inputs that it receives from the user.
+#Step 1: Read the user input for determining whether it is too hot
+text = input("Enter 1 if it is too hot, otherwise enter 0:")
+input_num = int(text)
+#Step 2: Determine whether it is too hot
+if input_num == 1 :
+    too_hot = True
+else:
+    too_hot = False
+#Step 3: Read the user input for determining whether it is too dry
+text = input("Enter 1 if it is too dry, otherwise enter 0:")
+input_num = int(text)
+#Step 4: Determine whether it is too dry
+if input_num == 1 :
+    too_dry = True
+else:
+    too_dry = False
+#Step 5: Write the boolean expression to determine whether it is too hot but not too dry
+result = too_hot and not too_dry
+#Step 6: Print the result
+if result == True :
+    print("Yes! It is too hot but not too dry.")
+else:
+    print("No! the weather condition 'too hot but not too dry' is not met.")
+```

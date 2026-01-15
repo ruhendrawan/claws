@@ -1,0 +1,8 @@
+Split results (by *_bin columns from bin CSV)
+=============================================
+length_lines_bin=1: 23784 rows -> output/window_5/code_with_problems/output/scores/splits_window_5_code_with_problems/length_lines_bin=1.csv
+length_lines_bin=0: 28617 rows -> output/window_5/code_with_problems/output/scores/splits_window_5_code_with_problems/length_lines_bin=0.csv
+comments_bin=1: 24793 rows -> output/window_5/code_with_problems/output/scores/splits_window_5_code_with_problems/comments_bin=1.csv
+comments_bin=0: 27608 rows -> output/window_5/code_with_problems/output/scores/splits_window_5_code_with_problems/comments_bin=0.csv
+chars_bin=1: 25996 rows -> output/window_5/code_with_problems/output/scores/splits_window_5_code_with_problems/chars_bin=1.csv
+chars_bin=0: 26405 rows -> output/window_5/code_with_problems/output/scores/splits_window_5_code_with_problems/chars_bin=0.csv

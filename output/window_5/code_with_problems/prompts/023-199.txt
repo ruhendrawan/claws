@@ -1,0 +1,38 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingError,HandlingSpecificError,Using try and except block with the specific error
+HandlingError,HandlingGeneralError,"Using try and except block as ""except Exception as e:"""
+HandlingAdvancedDataStructure,LinkedListTask,
+HandlingAdvancedDataStructure,StackTask,
+HandlingAdvancedDataStructure,BinaryTreeTask,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name:py_reverse_number
+#problem description: Construct a program that reverses the digits of an integer mathematically. 
+#Step 1: Assign initial values to the variables which we need for this program
+num = 1234
+reverse = 0
+#Step 2: Reverse the digits of the integer mathematically
+while num > 0 :
+    #Step 2.1: Get the last digit in the integer
+    last_digit = num % 10
+    #Step 2.2:?Append the last digit to reverse
+    reverse = (reverse * 10) + last_digit
+    #Step 2.3: Remove the last digit from the integer
+    num = num // 10
+    print("last digit:", last_digit, ", reverse:", reverse, ", integer:", num)
+print("The reversed integer is:", reverse)
+```

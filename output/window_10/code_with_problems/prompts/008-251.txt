@@ -1,0 +1,37 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+LiteralCollection,ListLiteral,
+LiteralCollection,DictLiteral,
+LiteralCollection,TupleLiteral,
+LiteralCollection,SetLiteral,
+ArithmeticExpression,BinaryOperation,
+ArithmeticExpression,UnaryOperation,
+LogicalExpression,ComparisonExpression,
+LogicalExpression,BooleanExpression,
+SubscriptExpression,IndexingExpression,
+SubscriptExpression,SlicingExpression,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_conditionals_temperature
+#problem description: Construct a program that prints out 'Cold', when the temperature is 15 degrees celcius or below, 'Moderate' when it is over 15 degrees but no more than 25 degrees, and 'Hot' when the temperature is over 25 degrees.
+if temperature <= 15:
+    print("Cold")
+elif temperature > 15:
+    if temperature <= 25:
+        print("Moderate")
+    else:
+        print("Hot")
+```

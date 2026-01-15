@@ -1,0 +1,44 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingFile,ClosingFile,
+HandlingFile,ReadingLine,
+HandlingFile,OpeningFile,
+HandlingString,ReplacingStringContent,
+HandlingString,CreatingString,"string = """""
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_average_float
+#problem description: Construct a program that reads a series of non-negative floating-point numbers from the user, sums them up, and calculate their average. Note that you need to think what value should the program use to indicate the end of the input.
+#Step 1: Define the variables that we need for this program
+total = 0
+count = 0
+#/Step 2: Read the first number that the user enters
+text = input("Enter a number: ")
+num = float(text)
+#Step 3: Process the number that the user has entered, then receive and process the next numbers as long as the user enters a non-negative number; otherwise stop
+while num >= 0.0 :
+    count += 1
+    total += num
+    print("The sum so far is", total, ", count =", count)
+    text = input("Enter a number: ")
+    num = float(text)
+#Step 4: Calculate and print the average of the numbers entered by the user
+if count == 0 :
+    print("No numbers were entered.")
+else :
+    average = total / count
+print("The average is:", average)
+```

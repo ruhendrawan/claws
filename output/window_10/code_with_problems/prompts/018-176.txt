@@ -1,0 +1,40 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingDictionary,CreatingDictionary,
+HandlingTuple,IndexingTuple,
+HandlingTuple,SlicingTuple,
+HandlingTuple,CreatingTuple,
+HandlingFloat,TransformingToFloatType,
+HandlingFile,OpeningFile,
+HandlingFile,ReadingLine,
+HandlingFile,ClosingFile,
+HandlingString,SlicingString,
+HandlingString,SplittingString,.split() or rsplit()
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_list_swap_adjacent_elements
+#problem description: Construct a program that swaps pairs of adjacent elements of the list. For example, if the list is [1, 2, 3, 4, 5, 6], the program will change it to [2, 1, 4, 3, 6, 5]. This program assumes that the list has always an even number of elements.
+#Step 1: Define and initialize the list
+lst = [1, 2, 3, 4, 5, 6]
+#Step 2: Iterate through the pairs of adjacent elements in the list
+for i in range(0, len(lst), 2):
+    #Step 2.1: Swap the element at index i with the element at index i+1
+    temp = lst[i]
+    lst[i] = lst[i+1]
+    lst[i+1] = temp
+#Step 3: Print the list
+print(lst)
+```

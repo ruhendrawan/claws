@@ -1,0 +1,31 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+BuiltInFunction,dict(),
+BuiltInFunction,list(),
+BuiltInFunction,print(),
+BuiltInFunction,abs(),
+BuiltInFunction,set(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_quick_sorting
+#problem description: Construct a function that implements quick sort algorithm. The partition() function has been pre defined and displayed below.<br/>Consider data is a list, first is the first element's index and last is the last element's index
+def quick_sort(data, first, last):
+	if first < last:
+		pivot = partition(data, first, last)
+		quick_sort(data, first, pivot-1)
+		quick_sort(data, pivot+1, last)
+	return data
+```

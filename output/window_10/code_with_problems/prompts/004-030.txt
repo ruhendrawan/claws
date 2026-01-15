@@ -1,0 +1,69 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ConditionalStatement,IfStatement,
+ConditionalStatement,IfElseStatement,
+ConditionalStatement,IfElifElseStatement,
+ImportStatement,Import,
+ImportStatement,ImportFrom,
+ExceptionHandlingStatement,RaiseStatement,
+ExceptionHandlingStatement,TryStatement,
+ExceptionHandlingStatement,AssertStatement,
+DictionaryMethod,get(),
+DictionaryMethod,keys(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: objects_classes_account
+#problem description : Construct a class that represents a basic bank account. This class should contain data representing the name of the account’s owner, the account number, and the account’s current balance; all of which could be accessed or changed only through the getter and setter methods. An instance of the class should be created by specifying three parameters that are used to initialize the instance (i.e., object) data. The other methods of this class should perform various services on the account (making deposits, withdrawals, adding interest to the account). These methods should examine the data passed into them to make sure the requested transaction is valid.
+#Step 1: Define the class
+class Account1 :
+    #Step 1.1: Initialize the account with the specified values
+    def __init__(self, owner, account, initial) :
+        self.__acct_name = owner
+        self.__acct_number = account
+        self.__balance = initial
+    #Step 1.2: Define a method to perform the deposit transaction
+    def deposit(self, amount) :
+        if (amount > 0) :
+            self.__balance = self.__balance + amount
+        return self.__balance
+    #Step 1.3: Define a method to perform a withdraw transaction
+    def withdraw(self, amount, fee) :
+        if (amount > 0 and fee >= 0 and amount+fee < self.__balance) :
+            self.__balance = self.__balance - amount - fee
+        return self.__balance
+    #Step 1.4: Define a method to add interest to the account
+    def add_interest(self) :
+        self.__balance += (self.__balance * 0.035)
+        return self.__balance
+    #Step 1.5: Define the methods to get the  state of the account
+    def get_name(self) :
+        return self.__acct_name
+    def get_balance(self) :
+        return self.__balance
+    def get_acct_number(self) :
+        return self.__acct_number
+#Step 2: Test the class
+acct1 = Account1("Tina Murphy", 72354, 25.59)
+acct2 = Account1("Angelica Adams", 69713, 500.00)
+acct3 = Account1("Edward Demsey", 93757, 769.32)
+acct1.deposit(44.10)
+adams_balance = acct2.deposit(75.25)
+print("{:s}'s balance after deposit: {:.2f}".format(acct2.get_name(), adams_balance))
+print("{:s}'s balance after deposit: {:.2f}".format(acct2.get_name(), acct2.withdraw (480, 1.50)))
+acct3.withdraw(-100.00, 1.50)
+acct2.add_interest()
+print("{:s}'s balance after adding interest: {:.2f}".format(acct2.get_name(), acct2.get_balance()))
+```

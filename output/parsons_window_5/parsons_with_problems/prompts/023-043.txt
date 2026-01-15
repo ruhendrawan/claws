@@ -1,0 +1,34 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+CheckingCondition,IfElseChecking,IfElseChecking refers to an if-else statement which is not placed inside any loop
+CheckingCondition,IfChecking,IfChecking refers to an if statement which is not placed inside any loop
+CheckingCondition,AssertChecking,
+CheckingCondition,BooleanEvaluating,Evaluating boolean expressions
+CheckingCondition,IfElifElseChecking,IfElifElseChecking refers to an if-elif-else statement which is not placed inside any loop
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_palindrome2
+#problem description: Construct a program which determines whether the original string is a palindrome. The function should be case insensitive i.e. upper and lowercase letters are intepreted as being the same.
+str = "Madam"
+n_str = str.lower()
+revers_str = ""
+for char in n_str:
+    revers_str = char + revers_str
+if n_str == revers_str:
+    print("This string is a palindrome!")
+else:
+    print("The string is not a palindrome!")
+```

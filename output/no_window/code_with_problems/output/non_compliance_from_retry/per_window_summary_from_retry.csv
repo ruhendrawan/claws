@@ -1,0 +1,2 @@
+session,num_batches,num_exercise_rows,missing_python_total,missing_education_total,missing_any_total,avg_missing_python_per_row,avg_missing_education_per_row,avg_missing_any_per_row,std_missing_python_per_row,std_missing_education_per_row,std_missing_any_per_row,avg_missing_python_per_batch,avg_missing_education_per_batch,avg_missing_any_per_batch,std_missing_python_per_batch,std_missing_education_per_batch,std_missing_any_per_batch
+no_window,5,1208,36353,28497,64850,30.094,23.59,53.684,37.804,35.677,52.601,7270.6,5699.4,12970,539.478,393.939,888.64

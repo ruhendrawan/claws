@@ -1,0 +1,6 @@
+session,batch_id,num_exercises_considered,missing_python_total,missing_education_total,missing_any_total,avg_missing_python_per_exercise,avg_missing_education_per_exercise,avg_missing_any_per_exercise,std_missing_python,std_missing_education,std_missing_any
+no_window,batch_68d3cb5b8b388190bb77bc6c4c8d891b,240,7513,6034,13547,31.304,25.142,56.446,38.612,37.374,56.395
+no_window,batch_68d3cb5c09fc8190ad9a7ad705ba21bf,239,6603,5569,12172,27.628,23.301,50.929,36.843,35.505,51.265
+no_window,batch_68d3cb5c83a481909e37f848d4dec458,238,6681,5099,11780,28.071,21.424,49.496,36.673,33.338,52.037
+no_window,batch_68d3cb5d1d1481909c565696730649fd,243,7988,6220,14208,32.872,25.597,58.469,38.539,36.679,51.151
+no_window,batch_68d3cb5d8858819093cbc126be2b8a9e,248,7568,5575,13143,30.516,22.48,52.996,38.017,35.161,51.477

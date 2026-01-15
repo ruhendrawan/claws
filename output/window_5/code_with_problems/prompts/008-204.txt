@@ -1,0 +1,30 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ArtithmeticOperator,*,
+ArtithmeticOperator,+,
+ArtithmeticOperator,-,
+ComparisonOperator,LessOrEqual,<=
+ComparisonOperator,==,==
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_concat_char_two_str
+#problem description: Construct a program that has a function that receives two strings and returns a string formed from the given strings such that the first character of each string is omitted. For example, the new string that will be formed from the strings 'abc' and 'xyz' is 'bcyz'. Assume that both strings have at least one character.
+#Step 1: Define the function
+def concat_chars(a, b):
+    return a[1:] + b[1:]
+#Step 2: Call the function
+print(concat_chars("Hello", "There"))
+```

@@ -1,0 +1,39 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+BuiltInFunction,round(),
+BuiltInFunction,dict(),
+BuiltInFunction,set(),
+BuiltInFunction,int(),
+BuiltInFunction,range(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name:py_temperature_list_days_above_threshold
+#Problem description : Construct a program that reads a series of temperatures and reports the days that are above 32 degrees Fahrenheit. Assume that the temperature values are in Fahrenheit. Also assume that input values could have a decimal point.
+#Step 1: Read the number of days that we have to enter their temperature data
+num_days = int(input("Enter the number of temperature values that will be entered: "))
+#Step 2: Read the temperature values
+temps = []
+for i in range(num_days):
+    val = float(input("Enter the temperature: "))
+    temps.append(val)
+#Step 3: Create a list that contains the days that are above 32 degrees Fahrenheit
+days_above_32 = []
+for i in range(len(temps)) :
+    if temps[i] > 32:
+        days_above_32.append("Day " + str(i+1))
+#Step 4: Print the result
+print("Days above 32 degrees Fahrenheit:", days_above_32)
+```

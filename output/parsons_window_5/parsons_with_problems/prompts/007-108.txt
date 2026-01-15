@@ -1,0 +1,30 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+ListMethod,insert(),
+ListMethod,pop(),
+ListMethod,remove(),
+DictionaryMethod,keys(),
+DictionaryMethod,values(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_pandas_stats_2
+#problem description: You're provided a dataframe of used cars using pandas. Select the 'type' and 'mileage' columns and use describe() to display summary statistics such as mean, count, and standard deviation.
+import pandas as pd
+
+df = pd.read_csv("used_cars.csv")
+
+print("Describe (type and mileage):", df[["type", "mileage"]].describe())
+```

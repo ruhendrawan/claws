@@ -1,0 +1,34 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+Operator,=,=
+ArtithmeticOperator,/,
+ArtithmeticOperator,*,
+ArtithmeticOperator,-,
+ArtithmeticOperator,+,
+ArtithmeticOperator,**,
+ArtithmeticOperator,//,
+ArtithmeticOperator,Modulus,same as %
+MembershipOperator,in,maybe delete this one actually
+LogicalOperator,or,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_iteration_addition
+#problem description: Construct a program that prints the value 8.
+i = 0
+while i < 7:
+    i = i + 2
+print(i)
+```

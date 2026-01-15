@@ -1,0 +1,37 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+BuiltInFunction,min(),
+BuiltInFunction,list(),
+BuiltInFunction,open(),
+BuiltInFunction,float(),
+BuiltInFunction,abs(),
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_fail_course3
+#problem description: Construct a program that determines whether a student fails the course based on the inputs that it receives from the instructor. The student fails the course if his/her score is not above the class average. Drag a tile to each missing field to construct this program.
+#Step 1: Read the instructor inputs
+text = input("Enter the student's score:")
+student_score = int(text)
+text = input("Enter the class average:")
+class_average = int(text)
+#Step 2: Write the boolean expression to determine whether the student fails the course
+is_failing = not ( student_score > class_average )
+#Step 3: Print the result
+if is_failing == True :
+    print("Yes! The student fails the course.")
+else:
+    print("No! The student does not fail the course.")
+```

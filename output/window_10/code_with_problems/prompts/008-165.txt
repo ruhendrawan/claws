@@ -1,0 +1,49 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+LiteralCollection,ListLiteral,
+LiteralCollection,DictLiteral,
+LiteralCollection,TupleLiteral,
+LiteralCollection,SetLiteral,
+ArithmeticExpression,BinaryOperation,
+ArithmeticExpression,UnaryOperation,
+LogicalExpression,ComparisonExpression,
+LogicalExpression,BooleanExpression,
+SubscriptExpression,IndexingExpression,
+SubscriptExpression,SlicingExpression,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_win_percentage_won_equal
+#problem description: Construct a program that receives from the user the number of games that a sports team won and tied in a tournament of 12 games and calculates the winning percentage of the sports team, counting ties as half wins. The program must ask the user for each of the two inputs until the user enters a valid number.
+#Step 1: Assign initial values to the variables which we need for this program
+total_games = 12
+#Step 2: Read the number of games that the sports team won in the tournament
+text = input("Enter the number of games that the sports team won in the tournament: ")
+wins = int(text)
+#Step 3: Validate the user input for the number of wins, ask for a valid input as long as the user enters an invalid number; otherwise stop
+while wins < 0 or wins > total_games :
+    text = input("Enter the number of games that the sports team won in the tournament: ")
+    wins = int(text)
+#Step 4: Read the number of games that the sports team tied in the tournament
+text = input("Enter the number of games tied: ")
+ties = int(text)
+#Step 5: Validate the user input for the number of ties, ask for a valid input as long as the user enters an invalid number; otherwise stop
+while ties < 0 or total_games < (ties + wins) :
+    text = input("Enter the number of games tied: ")
+    ties = int(text)
+#Step 6: Calculate and print the percentage of games won by a team, counting ties as half wins
+ratio = ( wins + ties // 2) / total_games
+print("Winning percentage:", ratio)
+```

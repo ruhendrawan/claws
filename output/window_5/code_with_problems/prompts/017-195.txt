@@ -1,0 +1,48 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+JumpStatement,ContinueStatement,
+JumpStatement,PassStatement,
+SubscriptExpression,SlicingExpression,
+SubscriptExpression,IndexingExpression,
+Call,FunctionCall,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: py
+#exercise name: py_temperature
+#problem description : Construct a program that reads a series of temperatures and reports the average temperature and the number of the days that are above the average. Assume that the input values could have a decimal point.
+#Step 1: Read the number of days that we have to enter their temperature data
+num_days = int(input("Enter the number of temperature values that will be entered: "))
+#Step 2: Read the temperature values
+temps = []
+total = 0
+for i in range(num_days):
+    val = float(input("Enter the temperature: "))
+    temps.append(val)
+    total += val
+#Step 3: Calculate the average temperature
+average = 0
+if num_days == 0:
+    print("No temperature values were entered.")
+else:
+    average = total / num_days
+#Step 4: Count the number of the days that are above the average temperature
+above = 0
+for x in temps:
+    if x > average:
+        above += 1
+#Step 5: Display the results
+print("Average temperature:", average)
+print(above, "days above average.")
+```

@@ -1,0 +1,35 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+HandlingString,IndexingString,
+HandlingString,FormattingString,f string
+HandlingString,ReplacingStringContent,
+HandlingString,TransformingToStringType,
+HandlingString,CreatingString,str()
+HandlingString,TrimmingString,strip() or rstrip()
+ModifyingStringCase,ConvertStringToUpperCase,
+ModifyingStringCase,CapitalizeString,
+ModifyingStringCase,ConvertStringToLowerCase,
+HandlingFunction,CallingFunctionLibrary,"CallingFunctionLibrary refers to ANY use of built-in Python functions (print, len, replace, etc.) and built-in methods of objects (like list.append() or string.replace(), etc.)."
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: ps
+#exercise name: ps_python_iteration_multiplication
+#problem description: Construct a program that prints values 1,2,4,8 and finally prints "The end!".
+value = 1
+while value < 9:
+    print(value)
+    value = value * 2
+print("The end!")
+```

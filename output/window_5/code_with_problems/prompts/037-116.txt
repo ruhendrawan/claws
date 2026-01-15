@@ -1,0 +1,33 @@
+
+You are an annotation assistant.
+Given a code snippet, evaluate all rows in the ontology classes CSV.
+Provide a reason for how the class is being used in the snippet/ problem, evaluate, and give a usage score.
+
+## Output
+Respond as long as possible.
+Score is between 0-5.
+Return as a CSV (exercise_name,parent,leaf,reason,score).
+
+## INPUT: Ontology Classes
+```csv(parent,leaf,description)
+b=temp
+)"
+ManagingVariable,AssigningVariable,
+ArithmeticOperation,FindMinimum,
+ArithmeticOperation,Round,
+```
+
+## INPUT: Code Snippet
+```code
+#exercise type: q_py
+#exercise name: q_py_topic_references:q_py_list_int_ref1
+def main():
+    numbers = [1, 3, 5, 7, 11, 13]
+    print(numbers)
+    original = numbers
+    numbers[3] = 2
+    print(original)
+    original[3+1] = 4
+    print(numbers)    
+main()
+```
