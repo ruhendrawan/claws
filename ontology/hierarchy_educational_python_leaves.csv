@@ -1,0 +1,109 @@
+Parent,Leaf,Description
+Python,Concatenation,
+Python,Importing,
+Python,FindingLength,refers to the expression len()
+Python,Printing,
+Python,CheckingForItem,check for item with the 'in' construct
+Python,HandlingInput,
+CheckingCondition,IfElseChecking,IfElseChecking refers to an if-else statement which is not placed inside any loop
+CheckingCondition,AssertChecking,
+CheckingCondition,IfElifElseChecking,IfElifElseChecking refers to an if-elif-else statement which is not placed inside any loop
+CheckingCondition,NestedIfChecking,"Nested If Checking refers to having an if, elif, or else block inside another if, elif, or else block."
+CheckingCondition,IfChecking,IfChecking refers to an if statement which is not placed inside any loop
+CheckingCondition,IfElifChecking,IfElifChecking refers to an if-elif statement which is not placed inside any loop
+CheckingCondition,BooleanEvaluating,Evaluating boolean expressions
+CheckingInForLoop,IfElseCheckingInForLoop,IfElseCheckingInForLoop refers to an if-else statement inside a for loop
+CheckingInForLoop,IfElifCheckingInForLoop,IfElifCheckingInForLoop refers to an if-elif statement inside a for loop
+CheckingInForLoop,IfCheckingInForLoop,IfCheckingInForLoop refers to an if statement inside a for loop
+CheckingInForLoop,IfElifElseCheckingInForLoop,IfElifElseCheckingInForLoop refers to an if-elif-else statement inside a for loop
+CheckingInWhileLoop,IfElifElseCheckingInWhileLoop,IfElifElseCheckingInWhileLoop refers to an if-elif-else statement inside a while loop
+CheckingInWhileLoop,IfCheckingInWhileLoop,IfCheckingInWhileLoop refers to an if statement inside a while loop
+CheckingInWhileLoop,IfElseCheckingInWhileLoop,IfElseCheckingInWhileLoop refers to an if-else statement inside a while loop
+CheckingInWhileLoop,IfElifCheckingInWhileLoop,IfElifCheckingInWhileLoop refers to an if-elif statement inside a while loop
+ManagingVariable,SwappingVariablesValue,"Refers to when variables are swapped (e.g. 
+temp =a
+a=b
+b=temp
+)"
+ManagingVariable,AssigningVariable,
+ManagingVariable,UpdatingVariable,UpdatingVariable refers to when a variable that was already assigned to a value is update (e.g. x+=1 or x=x+1)
+HandlingAdvancedDataStructure,BinaryTreeTask,
+HandlingAdvancedDataStructure,LinkedListTask,
+HandlingAdvancedDataStructure,QueueTask,
+HandlingAdvancedDataStructure,StackTask,
+TwoDimensionalArrayTask,ReplacingElement2DArray,
+TwoDimensionalArrayTask,Indexing2DArray,
+TwoDimensionalArrayTask,Create2DArray,
+HandlingObjectOrientedProgramming,CallingOOPMethod,
+HandlingObjectOrientedProgramming,CreatingObject,
+HandlingObjectOrientedProgramming,DefiningClass,
+HandlingObjectOrientedProgramming,DefiningOOPMethod,
+HandlingFunction,CallingFunctionLibrary,"CallingFunctionLibrary refers to ANY use of built-in Python functions (print, len, replace, etc.) and built-in methods of objects (like list.append() or string.replace(), etc.)."
+HandlingFunction,NestedFunctionCall,"NestedFunctionCall refers to when one function call is placed as an argument to another function call (e.g., f(g(x)))"
+HandlingFunctionCallingFunction,CallingFunctionCallingFunction,
+HandlingFunctionCallingFunction,DefiningFunctionCallingFunction,
+HandlingRecursiveFunction,CallingRecursiveFunction,CallingRecursiveFunction refers to calling a function that calls itself (recursion)
+HandlingRecursiveFunction,DefiningRecursiveFunction,DefiningRecursiveFunction refers to defining a function that calls itself within its own body (recursion).
+HandlingNestedFunction,CallingNestedFunction,CallingNestedFunction refers to the call of functions that have in their code the definition of other user-defined functions
+HandlingNestedFunction,DefiningNestedFunction,DefiningNestedFunction refers to defining a function inside another user-defined function.
+HandlingStandardFunction,CallingStandardFunction,CallingStandardFunction refers to calling a function that meets all the 3 following criteria:1) Does not call any other user-defined functions 2) Is not nested inside another function 3) Does not call itself (not recursive) Note: A standard function may still call built-in functions.
+HandlingStandardFunction,DefiningStandardFunction,"DefiningStandardFunction refers to defining a function that: 1) Does not call any other user-defined functions 2) Is not nested inside another function 3) Does not call itself (not recursive) Note: A standard function may still call built-in functions. Additionally, DefiningStandardFunction can still be later called in nested patterns (NestedFunctionCall)."
+NonNestedIteration,SingleForLoopIteration,"SingleForLoopIteration refers to a single use use of a for-loop that has no nested structure
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedForLoopIteration). Do not also include the single-loop categories for the outer loop"
+NonNestedIteration,SingleWhileLoopIteration,"SingleWhileLoopIteration refers to a single use of a while-loop that has no nested structure
+When identifying nested loop structures, classify the entire structure under the appropriate nested loop category only (e.g., NestedWhileLoopIteration). Do not also include the single-loop categories for the outer loop"
+WhileLoopWithUpdate,WhileLoopWithListIndexing,WhileLoopWithListIndexing refers to when there is an indexing of a list happening inside a while loop
+WhileLoopWithUpdate,WhileLoopWith*=,WhileLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a while loop
+WhileLoopWithUpdate,WhileLoopWith+=,WhileLoopWith+= refers to when there is an update of a variable with the addition sign inside a while loop
+ForLoopWithUpdate,ForLoopWith+=,ForLoopWith+= refers to when there is an update of a variable with the addition sign inside a for loop
+ForLoopWithUpdate,ForLoopWith*=,ForLoopWith*= refers to when there is an update of a variable with the multiplication sign inside a for loop
+ForLoopWithUpdate,ForLoopWithListIndexing,ForLoopWithListIndexing refers to when there is an indexing of a list happening inside a for  loop
+NestedLoopIteration,MixedNestedLoopIteration,MixedNestedLoopIteration refers to nested loop such that a while-loop inside a for-loop or a for-loop inside a while-loop
+NestedLoopIteration,NestedForLoopIteration,NestedForLoopIteration refers to nested loop such that  a for-loop is inside another for-loop
+NestedLoopIteration,NestedWhileLoopIteration,NestedWhileLoopIteration refers to nested loop such that a while-loop is inside another while-loop
+ArithmeticOperation,FindAbsolute,
+ArithmeticOperation,FindRemainder,
+ArithmeticOperation,FindMaximum,
+ArithmeticOperation,Addition,
+ArithmeticOperation,Round,
+ArithmeticOperation,Power,
+ArithmeticOperation,FindMinimum,
+ArithmeticOperation,Substraction,
+ArithmeticOperation,Division,
+ArithmeticOperation,Multiplication,
+HandlingInteger,TransformingToIntType,"float()
+int()"
+HandlingTuple,CreatingTuple,
+HandlingTuple,SlicingTuple,
+HandlingTuple,IndexingTuple,
+HandlingFloat,TransformingToFloatType,
+HandlingDictionary,ReplacingDictionaryElement,refers to using the expression dictionary[old_key]= value
+HandlingDictionary,IndexingDictionary,Refers to direct indexig with the expression dict[key]
+HandlingDictionary,AddingItemToDictionary,Referes to the expression dictionary[‘new_key' ]= value
+HandlingDictionary,AccessingDictionary,"AccessingDictionary includes any operation that retrieves values from a dictionary, including direct indexing (dict[key]) and methods like .get(), .items(), .keys(), and .values().)"
+HandlingDictionary,CreatingDictionary,
+HandlingList,DeletingListElement,
+HandlingList,IndexingList,
+HandlingList,CreatingList,
+HandlingList,SlicingList,
+HandlingList,ReplacingListElement,list[index]= value
+HandlingList,ListReferencing,"ListReferencing refers to the code in which one list is set equal to another, and a change to one of the lists causes the same change in the other list. ListReferencing should only be marked as present if a list is explicitly assigned to another list variable (e.g., list2 = list1)."
+HandlingList,ReversingList,
+AddingListElement,AddingListElementWithInsert,
+AddingListElement,AddingListElementWithAppend,
+HandlingFile,ClosingFile,
+HandlingFile,ReadingLine,
+HandlingFile,OpeningFile,
+HandlingString,CreatingString,"string = """""
+HandlingString,ReplacingStringContent,
+HandlingString,FormattingString,f string
+HandlingString,TransformingToStringType,
+HandlingString,SplittingString,.split() or rsplit()
+HandlingString,TrimmingString,strip() or rstrip()
+HandlingString,IndexingString,
+HandlingString,SlicingString,
+ModifyingStringCase,ConvertStringToUpperCase,
+ModifyingStringCase,ConvertStringToLowerCase,
+ModifyingStringCase,CapitalizeString,
+HandlingError,HandlingSpecificError,Using try and except block with the specific error
+HandlingError,HandlingGeneralError,"Using try and except block as ""except Exception as e:"""

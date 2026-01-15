@@ -1,0 +1,631 @@
+{
+  "EducationalPython": [
+    "Concatenation",
+    "Importing",
+    "CheckingCondition",
+    "FindingLength",
+    "Printing",
+    "ManagingVariable",
+    "HandlingAdvancedDataStructure",
+    "HandlingObjectOrientedProgramming",
+    "HandlingFunction",
+    "Iteration",
+    "ArithmeticOperation",
+    "CheckingForItem",
+    "DataTypeSpecificTask",
+    "HandlingInput",
+    "HandlingError"
+  ],
+  "HandlingObjectOrientedProgramming": [
+    "CallingOOPMethod",
+    "CreatingObject",
+    "DefiningClass",
+    "DefiningOOPMethod"
+  ],
+  "HandlingDictionary": [
+    "ReplacingDictionaryElement",
+    "IndexingDictionary",
+    "AddingItemToDictionary",
+    "AccessingDictionary",
+    "CreatingDictionary"
+  ],
+  "Python": [
+    "Expression",
+    "Exception",
+    "Method",
+    "Operator",
+    "Statement",
+    "BuiltInFunction"
+  ],
+  "NestedLoopIteration": [
+    "MixedNestedLoopIteration",
+    "NestedForLoopIteration",
+    "NestedWhileLoopIteration"
+  ],
+  "HandlingList": [
+    "DeletingListElement",
+    "IndexingList",
+    "CreatingList",
+    "SlicingList",
+    "ReplacingListElement",
+    "ListReferencing",
+    "AddingListElement",
+    "ReversingList"
+  ],
+  "ListMethod": [
+    "reverse()",
+    "insert()",
+    "remove()",
+    "append()",
+    "pop()"
+  ],
+  "ArtithmeticOperator": [
+    "//",
+    "-",
+    "+",
+    "/",
+    "**",
+    "Modulus",
+    "*"
+  ],
+  "JumpStatement": [
+    "PassStatement",
+    "BreakStatement",
+    "ContinueStatement",
+    "ReturnStatement"
+  ],
+  "ExceptionHandlingStatement": [
+    "TryStatement",
+    "RaiseStatement",
+    "AssertStatement"
+  ],
+  "HandlingAdvancedDataStructure": [
+    "BinaryTreeTask",
+    "LinkedListTask",
+    "QueueTask",
+    "StackTask",
+    "TwoDimensionalArrayTask"
+  ],
+  "IfInLoop": [
+    "IfInWhileLoop",
+    "IfInForLoop"
+  ],
+  "Method": [
+    "StringMethod",
+    "DictionaryMethod",
+    "ClassMethod",
+    "ListMethod",
+    "FileMethod"
+  ],
+  "Queue": [
+    "CircularQueue"
+  ],
+  "BuiltInFunction": [
+    "dict()",
+    "str()",
+    "next()",
+    "input()",
+    "int()",
+    "max()",
+    "float()",
+    "set()",
+    "open()",
+    "range()",
+    "tuple()",
+    "abs()",
+    "round()",
+    "len()",
+    "min()",
+    "print()",
+    "list()"
+  ],
+  "CheckingCondition": [
+    "CheckingInForLoop",
+    "IfElseChecking",
+    "AssertChecking",
+    "IfElifElseChecking",
+    "NestedIfChecking",
+    "IfChecking",
+    "CheckingInWhileLoop",
+    "IfElifChecking",
+    "BooleanEvaluating"
+  ],
+  "DefinitionStatement": [
+    "FunctionDefinition",
+    "ClassDefinition"
+  ],
+  "NumericLiteral": [
+    "FloatLiteral",
+    "IntegerLiteral"
+  ],
+  "ComparisonOperator": [
+    "LessOrEqual",
+    "Less",
+    "Larger",
+    "LargerOrEqual",
+    "==",
+    "NotEqual"
+  ],
+  "NestedLoop": [
+    "MixedNestedLoop",
+    "NestedWhileLoop",
+    "NestedForLoop"
+  ],
+  "StringMethod": [
+    "split()",
+    "lower()",
+    "join()",
+    "format()",
+    "capitalize()",
+    "rstrip()",
+    "replace()"
+  ],
+  "Error": [
+    "TypeError",
+    "OSError",
+    "IndexError",
+    "IOError",
+    "FileNotFoundError",
+    "ValueError",
+    "AssertionError"
+  ],
+  "Expression": [
+    "SubscriptExpression",
+    "Call",
+    "ArithmeticExpression",
+    "LogicalExpression",
+    "Literal"
+  ],
+  "Statement": [
+    "ConditionalStatement",
+    "ImportStatement",
+    "ExpressionStatement",
+    "JumpStatement",
+    "IterationStatement",
+    "ExceptionHandlingStatement",
+    "AssignmentStatement",
+    "DefinitionStatement"
+  ],
+  "ClassMethod": [
+    "__init()__"
+  ],
+  "TwoDimensionalArrayTask": [
+    "ReplacingElement2DArray",
+    "Indexing2DArray",
+    "Create2DArray"
+  ],
+  "ImportStatement": [
+    "Import",
+    "ImportFrom"
+  ],
+  "LiteralCollection": [
+    "TupleLiteral",
+    "SetLiteral",
+    "ListLiteral",
+    "DictLiteral"
+  ],
+  "HandlingString": [
+    "CreatingString",
+    "ModifyingStringCase",
+    "ReplacingStringContent",
+    "FormattingString",
+    "TransformingToStringType",
+    "SplittingString",
+    "TrimmingString",
+    "IndexingString",
+    "SlicingString"
+  ],
+  "Iteration": [
+    "WhileLoopWithUpdate",
+    "SingleForLoopIteration",
+    "SingleWhileLoopIteration",
+    "ForLoopWithUpdate",
+    "NestedLoopIteration"
+  ],
+  "ArithmeticOperation": [
+    "FindAbsolute",
+    "FindRemainder",
+    "FindMaximum",
+    "Addition",
+    "Round",
+    "Power",
+    "FindMinimum",
+    "Substraction",
+    "Division",
+    "Multiplication"
+  ],
+  "HandlingTuple": [
+    "CreatingTuple",
+    "SlicingTuple",
+    "IndexingTuple"
+  ],
+  "DictionaryMethod": [
+    "values()",
+    "keys()",
+    "items()",
+    "get()"
+  ],
+  "SubscriptExpression": [
+    "IndexingExpression",
+    "SlicingExpression"
+  ],
+  "ModifyingStringCase": [
+    "ConvertStringToUpperCase",
+    "ConvertStringToLowerCase",
+    "CapitalizeString"
+  ],
+  "DataTypeSpecificTask": [
+    "HandlingInteger",
+    "HandlingTuple",
+    "HandlingFloat",
+    "HandlingDictionary",
+    "HandlingList",
+    "HandlingFile",
+    "HandlingString"
+  ],
+  "CheckingInForLoop": [
+    "IfElseCheckingInForLoop",
+    "IfElifCheckingInForLoop",
+    "IfCheckingInForLoop",
+    "IfElifElseCheckingInForLoop"
+  ],
+  "HandlingFunctionCallingFunction": [
+    "CallingFunctionCallingFunction",
+    "DefiningFunctionCallingFunction"
+  ],
+  "Operator": [
+    "ComparisonOperator",
+    "=",
+    "MembershipOperator",
+    "LogicalOperator",
+    "ArtithmeticOperator"
+  ],
+  "HandlingFunction": [
+    "HandlingFunctionCallingFunction",
+    "HandlingRecursiveFunction",
+    "CallingFunctionLibrary",
+    "HandlingNestedFunction",
+    "HandlingStandardFunction",
+    "NestedFunctionCall"
+  ],
+  "FileMethod": [
+    "readline()",
+    "close()",
+    "read()"
+  ],
+  "ManagingVariable": [
+    "SwappingVariablesValue",
+    "AssigningVariable",
+    "UpdatingVariable"
+  ],
+  "HandlingStandardFunction": [
+    "CallingStandardFunction",
+    "DefiningStandardFunction"
+  ],
+  "CheckingInWhileLoop": [
+    "IfElifElseCheckingInWhileLoop",
+    "IfCheckingInWhileLoop",
+    "IfElseCheckingInWhileLoop",
+    "IfElifCheckingInWhileLoop"
+  ],
+  "HandlingError": [
+    "HandlingSpecificError",
+    "HandlingGeneralError"
+  ],
+  "AssignmentStatement": [
+    "SimpleAssignmentStatement",
+    "AugmentedAssignmentStatement"
+  ],
+  "HandlingInteger": [
+    "TransformingToIntType"
+  ],
+  "ComplexConstruct": [
+    "NestedLoop",
+    "NestedIf",
+    "IfInLoop",
+    "AlgorithmImplementation",
+    "Queue",
+    "ThreeStepValueSwap",
+    "LinkedList",
+    "Stack",
+    "RecursiveFunction",
+    "BinaryTree",
+    "NestedFunction",
+    "TwoDimensionalArray"
+  ],
+  "HandlingNestedFunction": [
+    "CallingNestedFunction",
+    "DefiningNestedFunction"
+  ],
+  "ForLoopWithUpdate": [
+    "ForLoopWith+=",
+    "ForLoopWith*=",
+    "ForLoopWithListIndexing"
+  ],
+  "WhileLoopWithUpdate": [
+    "WhileLoopWithListIndexing",
+    "WhileLoopWith*=",
+    "WhileLoopWith+="
+  ],
+  "Literal": [
+    "NumericLiteral",
+    "StringLiteral",
+    "BooleanLiteral",
+    "NoneLiteral",
+    "LiteralCollection"
+  ],
+  "LogicalExpression": [
+    "ComparisonExpression",
+    "BooleanExpression"
+  ],
+  "LogicalOperator": [
+    "and",
+    "or",
+    "not"
+  ],
+  "Thing": [
+    "Python"
+  ],
+  "ImportedElement": [
+    "Library",
+    "PythonFiles"
+  ],
+  "IterationStatement": [
+    "ForStatement",
+    "WhileStatement"
+  ],
+  "HandlingFile": [
+    "ClosingFile",
+    "ReadingLine",
+    "OpeningFile"
+  ],
+  "HandlingRecursiveFunction": [
+    "CallingRecursiveFunction",
+    "DefiningRecursiveFunction"
+  ],
+  "Exception": [
+    "Error"
+  ],
+  "ArithmeticExpression": [
+    "BinaryOperation",
+    "UnaryOperation"
+  ],
+  "ConditionalStatement": [
+    "IfElifElseStatement",
+    "IfStatement",
+    "IfElseStatement",
+    "IfElifStatement"
+  ],
+  "AddingListElement": [
+    "AddingListElementWithInsert",
+    "AddingListElementWithAppend"
+  ],
+  "HandlingFloat": [
+    "TransformingToFloatType"
+  ],
+  "MembershipOperator": [
+    "in"
+  ],
+  "Library": [
+    "math"
+  ],
+  "Call": [
+    "FunctionCall"
+  ],
+  "FormattingString": [],
+  "-": [],
+  "math": [],
+  "ForLoopWith+=": [],
+  "CreatingString": [],
+  "__init()__": [],
+  "SingleWhileLoopIteration": [],
+  "TryStatement": [],
+  "NestedForLoopIteration": [],
+  "join()": [],
+  "WhileLoopWith*=": [],
+  "ReplacingStringContent": [],
+  "FindMaximum": [],
+  "format()": [],
+  "set()": [],
+  "DefiningClass": [],
+  "IfElifChecking": [],
+  "IndexingString": [],
+  "WhileLoopWithListIndexing": [],
+  "Addition": [],
+  "and": [],
+  "BinaryOperation": [],
+  "CreatingTuple": [],
+  "float()": [],
+  "IndexingExpression": [],
+  "MixedNestedLoop": [],
+  "TupleLiteral": [],
+  "StringLiteral": [],
+  "NoneLiteral": [],
+  "Concatenation": [],
+  "SingleForLoopIteration": [],
+  "readline()": [],
+  "CallingOOPMethod": [],
+  "SetLiteral": [],
+  "IfInWhileLoop": [],
+  "NestedWhileLoopIteration": [],
+  "NestedFunctionCall": [],
+  "ConvertStringToUpperCase": [],
+  "Stack": [],
+  "IndexingList": [],
+  "open()": [],
+  "TransformingToFloatType": [],
+  "SplittingString": [],
+  "WhileStatement": [],
+  "BinaryTreeTask": [],
+  "SlicingList": [],
+  "Import": [],
+  "FunctionCall": [],
+  "Less": [],
+  "DefiningNestedFunction": [],
+  "LargerOrEqual": [],
+  "WhileLoopWith+=": [],
+  "AddingListElementWithAppend": [],
+  "lower()": [],
+  "SlicingTuple": [],
+  "Printing": [],
+  "LinkedList": [],
+  "abs()": [],
+  "AugmentedAssignmentStatement": [],
+  "ImportFrom": [],
+  "ContinueStatement": [],
+  "ReplacingElement2DArray": [],
+  "TransformingToStringType": [],
+  "rstrip()": [],
+  "QueueTask": [],
+  "NestedWhileLoop": [],
+  "ReplacingListElement": [],
+  "NestedIf": [],
+  "BinaryTree": [],
+  "append()": [],
+  "IndexingTuple": [],
+  "CreatingList": [],
+  "ExpressionStatement": [],
+  "OpeningFile": [],
+  "NestedIfChecking": [],
+  "MixedNestedLoopIteration": [],
+  "AssigningVariable": [],
+  "CallingFunctionCallingFunction": [],
+  "AssertionError": [],
+  "min()": [],
+  "get()": [],
+  "FindingLength": [],
+  "Modulus": [],
+  "RaiseStatement": [],
+  "FileNotFoundError": [],
+  "Multiplication": [],
+  "items()": [],
+  "remove()": [],
+  "TwoDimensionalArray": [],
+  "+": [],
+  "read()": [],
+  "BreakStatement": [],
+  "max()": [],
+  "DictLiteral": [],
+  "PythonFiles": [],
+  "==": [],
+  "round()": [],
+  "insert()": [],
+  "FloatLiteral": [],
+  "range()": [],
+  "pop()": [],
+  "LinkedListTask": [],
+  "CallingRecursiveFunction": [],
+  "NestedFunction": [],
+  "BooleanExpression": [],
+  "DeletingListElement": [],
+  "CreatingObject": [],
+  "*": [],
+  "IfElifElseChecking": [],
+  "IfInForLoop": [],
+  "capitalize()": [],
+  "FindRemainder": [],
+  "UnaryOperation": [],
+  "ForLoopWith*=": [],
+  "DefiningOOPMethod": [],
+  "OSError": [],
+  "Round": [],
+  "CapitalizeString": [],
+  "TypeError": [],
+  "IfElifCheckingInForLoop": [],
+  "CallingFunctionLibrary": [],
+  "Substraction": [],
+  "ForLoopWithListIndexing": [],
+  "ConvertStringToLowerCase": [],
+  "CheckingForItem": [],
+  "str()": [],
+  "ReversingList": [],
+  "or": [],
+  "IndexingDictionary": [],
+  "IfElseChecking": [],
+  "FindMinimum": [],
+  "ListLiteral": [],
+  "NestedForLoop": [],
+  "IndexError": [],
+  "AssertStatement": [],
+  "input()": [],
+  "list()": [],
+  "values()": [],
+  "HandlingSpecificError": [],
+  "ClosingFile": [],
+  "DefiningRecursiveFunction": [],
+  "IfChecking": [],
+  "SimpleAssignmentStatement": [],
+  "ClassDefinition": [],
+  "ComparisonExpression": [],
+  "SlicingExpression": [],
+  "not": [],
+  "IfElifElseStatement": [],
+  "IfCheckingInWhileLoop": [],
+  "CallingStandardFunction": [],
+  "next()": [],
+  "BooleanLiteral": [],
+  "IfElifCheckingInWhileLoop": [],
+  "IfElseCheckingInWhileLoop": [],
+  "in": [],
+  "CircularQueue": [],
+  "ValueError": [],
+  "LessOrEqual": [],
+  "tuple()": [],
+  "AccessingDictionary": [],
+  "ListReferencing": [],
+  "ReplacingDictionaryElement": [],
+  "replace()": [],
+  "CreatingDictionary": [],
+  "FunctionDefinition": [],
+  "AddingItemToDictionary": [],
+  "HandlingGeneralError": [],
+  "reverse()": [],
+  "AssertChecking": [],
+  "ThreeStepValueSwap": [],
+  "FindAbsolute": [],
+  "RecursiveFunction": [],
+  "IfElifElseCheckingInWhileLoop": [],
+  "**": [],
+  "len()": [],
+  "IfElseCheckingInForLoop": [],
+  "Power": [],
+  "/": [],
+  "IfElifStatement": [],
+  "print()": [],
+  "keys()": [],
+  "Larger": [],
+  "SlicingString": [],
+  "PassStatement": [],
+  "AddingListElementWithInsert": [],
+  "ForStatement": [],
+  "DefiningStandardFunction": [],
+  "AlgorithmImplementation": [],
+  "IOError": [],
+  "NotEqual": [],
+  "IfElifElseCheckingInForLoop": [],
+  "ReadingLine": [],
+  "ReturnStatement": [],
+  "Importing": [],
+  "Indexing2DArray": [],
+  "StackTask": [],
+  "Create2DArray": [],
+  "BooleanEvaluating": [],
+  "CallingNestedFunction": [],
+  "IfElseStatement": [],
+  "close()": [],
+  "TrimmingString": [],
+  "HandlingInput": [],
+  "Division": [],
+  "TransformingToIntType": [],
+  "split()": [],
+  "int()": [],
+  "=": [],
+  "IfStatement": [],
+  "IfCheckingInForLoop": [],
+  "IntegerLiteral": [],
+  "UpdatingVariable": [],
+  "SwappingVariablesValue": [],
+  "DefiningFunctionCallingFunction": [],
+  "//": [],
+  "dict()": []
+}
