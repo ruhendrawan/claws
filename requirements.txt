@@ -1,0 +1,8 @@
+rdflib
+
+openai
+python-dotenv
+
+matplotlib
+pandas
+numpy
