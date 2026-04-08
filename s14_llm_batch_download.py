@@ -1,7 +1,7 @@
 import csv
 import json
 import os
-from anyio import Path
+from pathlib import Path
 from openai import OpenAI
 from openai.types import Batch, BatchRequestCounts
 from dotenv import load_dotenv

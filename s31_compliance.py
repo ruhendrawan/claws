@@ -6,7 +6,7 @@ import statistics
 from collections import defaultdict
 from typing import Dict, List, Tuple, Set
 
-from anyio import Path
+from pathlib import Path
 from s10x_settings import (
     PROMPT_INPUT_SNIPPET,
     LEAVES_PYTHON_FILE,

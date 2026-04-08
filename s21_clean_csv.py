@@ -2,7 +2,7 @@ import csv
 import os
 import re
 import sys
-from anyio import Path
+from pathlib import Path
 from collections import defaultdict
 from typing import Dict, Iterable, List, Tuple, Set
 

@@ -3,16 +3,20 @@
 # Generate list of leave nodes as CSV for LLM Prompt Context.
 
 
-import pandas as pd
-
-from rdflib import Graph, RDFS, RDF
+import argparse
 import csv
 import json
+from pathlib import Path
+
+import pandas as pd
+from rdflib import RDF, RDFS, Graph
+
 
 def clean_uri(uri):
-    return uri.split('#')[-1] if '#' in uri else uri.split('/')[-1]
+    return uri.split("#")[-1] if "#" in uri else uri.split("/")[-1]
 
-def build_class_hierarchy(rdf_file_path, format='xml'):
+
+def build_class_hierarchy(rdf_file_path, format="xml"):
     g = Graph()
     g.parse(rdf_file_path, format=format)
 
@@ -33,16 +37,28 @@ def build_class_hierarchy(rdf_file_path, format='xml'):
             hierarchy[parent].append(child)
 
         if p == RDFS.comment:
-            comments[clean_uri(str(s))] = str(o)
+            # Some classes have multiple rdfs:comment values; RDF triple iteration
+            # order can be non-deterministic, so pick a stable "best" description.
+            label = clean_uri(str(s))
+            candidate = str(o)
+            existing = comments.get(label)
+            if (
+                existing is None
+                or len(candidate) > len(existing)
+                or (len(candidate) == len(existing) and candidate > existing)
+            ):
+                comments[label] = candidate
 
     for label in class_labels:
         hierarchy.setdefault(label, [])
 
     return hierarchy, comments
 
+
 def save_dict_to_text(data, output_file_path):
-    with open(output_file_path, 'w', encoding='utf-8') as f:
+    with open(output_file_path, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, indent=2))
+
 
 def extract_subtree(hierarchy, root):
     subtree = {}
@@ -57,6 +73,7 @@ def extract_subtree(hierarchy, root):
     dfs(root)
     return subtree
 
+
 def extract_leaves_with_parents(subtree):
     leaves_with_parents = []
     for parent, children in subtree.items():
@@ -64,6 +81,7 @@ def extract_leaves_with_parents(subtree):
             if child in subtree and not subtree[child]:
                 leaves_with_parents.append((parent, child))
     return leaves_with_parents
+
 
 code_patterns = {
     "IfCheckingInForLoop": "refers to an if statement inside a for loop",
@@ -93,41 +111,41 @@ code_patterns = {
     "DefiningRecursiveFunction": "refers to defining a function that calls itself within its own body (recursion).",
     "NestedFunctionCall": "refers to when one function call is placed as an argument to another function call (e.g., f(g(x)))",
     "DefiningStandardFunction": "refers to defining a function that: 1) Does not call any other user-defined functions 2) Is not nested inside another function 3) Does not call itself (not recursive) Note: A standard function may still call built-in functions. Additionally, DefiningStandardFunction can still be later called in nested patterns (NestedFunctionCall).",
-    "CallingStandardFunction": "refers to calling a function that meets all the 3 following criteria:1) Does not call any other user-defined functions 2) Is not nested inside another function 3) Does not call itself (not recursive) Note: A standard function may still call built-in functions."
+    "CallingStandardFunction": "refers to calling a function that meets all the 3 following criteria:1) Does not call any other user-defined functions 2) Is not nested inside another function 3) Does not call itself (not recursive) Note: A standard function may still call built-in functions.",
 }
 
 
 leaf_filter = [
     # Python Parser
-    'UnaryOperation',
-    'IndexingExpression',
-    'SlicingExpression',
+    "UnaryOperation",
+    "IndexingExpression",
+    "SlicingExpression",
     # Educational
-    'IndexingDictionary',
-    'IndexingList',
-    'IndexingString',
-    'IndexingTuple',
-    'SlicingList',
-    'SlicingTuple',
-    'SlicingString',
-    'WhileLoopWithListIndexing',
-    'WhileLoopWith*=',
-    'WhileLoopWith+=',
-    'ForLoopWithListIndexing',
-    'ForLoopWith*=',
-    'ForLoopWith+=',
-    'ReplacingDictionaryElement',
-    'ReplacingListElement',
-    'ReplacingElement2DArray'
+    "IndexingDictionary",
+    "IndexingList",
+    "IndexingString",
+    "IndexingTuple",
+    "SlicingList",
+    "SlicingTuple",
+    "SlicingString",
+    "WhileLoopWithListIndexing",
+    "WhileLoopWith*=",
+    "WhileLoopWith+=",
+    "ForLoopWithListIndexing",
+    "ForLoopWith*=",
+    "ForLoopWith+=",
+    "ReplacingDictionaryElement",
+    "ReplacingListElement",
+    "ReplacingElement2DArray",
 ]
 leaf_filter = None
 
-def save_leaves_with_parents_csv(leaves_with_parents, output_csv_path, comments):
-    with open(output_csv_path, 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(['Parent', 'Leaf', 'Description'])
-        for parent, leaf in leaves_with_parents:
 
+def save_leaves_with_parents_csv(leaves_with_parents, output_csv_path, comments):
+    with open(output_csv_path, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["Parent", "Leaf", "Description"])
+        for parent, leaf in leaves_with_parents:
             if parent == "EducationalPython":
                 parent = "Python"
             if parent == "Iteration":
@@ -139,40 +157,64 @@ def save_leaves_with_parents_csv(leaves_with_parents, output_csv_path, comments)
 
             is_leaf_included = True
             if leaf_filter:
-              is_leaf_included = leaf in leaf_filter
+                is_leaf_included = leaf in leaf_filter
 
             if is_leaf_included:
-              description = comments.get(leaf) or code_patterns.get(leaf, '')
-              writer.writerow([parent, leaf, description])
-
+                description = comments.get(leaf) or code_patterns.get(leaf, "")
+                writer.writerow([parent, leaf, description])
 
 
 if __name__ == "__main__":
-
-    # DON'T RUN THIS UNLESS YOU WANT TO OVERWRITE THE EXISTING ONTOLOGY CSV FILES
+    # WARNING: By default this overwrites files in `ontology/`.
     #
-    # Only run this once to generate the ontology CSV files
-    # This make sure that the order/ arrangement of the ontology nodes are consistent
-    # for comparison of results across different experiments
+    # Historically, this script was run once to generate the ontology CSV files and
+    # keep ordering consistent for comparison across experiments.
 
+    parser = argparse.ArgumentParser(
+        description="Generate ontology hierarchy + leaf CSVs from an OWL (RDF/XML) file."
+    )
+    parser.add_argument(
+        "--rdf-file",
+        default="data/final_ontology.owl",
+        help="Path to OWL/RDF file to parse.",
+    )
+    parser.add_argument(
+        "--rdf-format", default="xml", help="RDFLib parse format (default: xml)."
+    )
+    parser.add_argument(
+        "--out-dir",
+        default="ontology",
+        help="Output directory for hierarchy and CSV files.",
+    )
+    args = parser.parse_args()
 
-    rdf_file = "data/final_ontology.owl"
-    rdf_format = 'xml'
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-    hierarchy, comments = build_class_hierarchy(rdf_file, format=rdf_format)
+    hierarchy, comments = build_class_hierarchy(args.rdf_file, format=args.rdf_format)
 
-    save_dict_to_text(hierarchy, "ontology/hierarchy.txt")
+    save_dict_to_text(hierarchy, out_dir / "hierarchy.txt")
 
     educational_python_subtree = extract_subtree(hierarchy, "EducationalPython")
     python_subtree = extract_subtree(hierarchy, "Python")
 
-    save_dict_to_text(educational_python_subtree, "ontology/hierarchy_educational_python.txt")
-    save_dict_to_text(python_subtree, "ontology/hierarchy_python.txt")
+    save_dict_to_text(
+        educational_python_subtree, out_dir / "hierarchy_educational_python.txt"
+    )
+    save_dict_to_text(python_subtree, out_dir / "hierarchy_python.txt")
 
     educational_python_leaves = extract_leaves_with_parents(educational_python_subtree)
     python_leaves = extract_leaves_with_parents(python_subtree)
 
-    save_leaves_with_parents_csv(educational_python_leaves, "ontology/hierarchy_educational_python_leaves.csv", comments)
-    save_leaves_with_parents_csv(python_leaves, "ontology/hierarchy_python_leaves.csv", comments)
+    save_leaves_with_parents_csv(
+        educational_python_leaves,
+        out_dir / "hierarchy_educational_python_leaves.csv",
+        comments,
+    )
+    save_leaves_with_parents_csv(
+        python_leaves,
+        out_dir / "hierarchy_python_leaves.csv",
+        comments,
+    )
 
-    print("CSV leaf outputs with parent and description saved.")
+    print("CSV leaf outputs with parent and description saved:", str(out_dir))

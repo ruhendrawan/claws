@@ -1,4 +1,4 @@
-from anyio import Path
+from pathlib import Path
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
